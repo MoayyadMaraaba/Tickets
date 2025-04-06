@@ -1,11 +1,11 @@
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-    host: "mail.zimamsys.com",
+    host: "",
     port: 25,
     auth: {
-        user: "support@zimamsys.com",
-        pass: "Hsjytv_Hggi1",
+        user: "",
+        pass: "",
     },
 });
 
@@ -23,7 +23,7 @@ let email = {
         });
 
         const mailOptions = {
-            from: "support@zimamsys.com",
+            from: "",
             to: to,
             subject: subject,
             html: html
