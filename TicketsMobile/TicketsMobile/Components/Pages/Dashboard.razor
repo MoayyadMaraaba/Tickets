@@ -1,0 +1,598 @@
+﻿@page "/Dashboard"
+
+@using TicketsMobile.API;
+@using TicketsMobile.Models;
+@using Type = TicketsMobile.Models.Type;
+@using System.Timers;
+@using TicketsMobile.Components.Layout;
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager Navigation
+
+@code {
+
+	// Loaded Data
+	private List<Dictionary<string, object>> tickets = new List<Dictionary<string, object>>();
+	private List<Type> types = new List<Type>();
+	private List<Status> statuses = new List<Status>();
+	private bool IsAdmin = false;
+	private bool IsAgent = false;
+	private bool IsUser = false;
+
+	// Filter And Search data
+	private string query = "";
+	private Type selectedType = new Type();
+	private Status selectedStatus = new Status();
+	private string selectedPriority = "";
+	private string date = "";
+	private int Closed = 0;
+
+	// Message Box Information
+	private bool newActivity = false;
+	private string MessageTitle = "";
+	private string MessageDescription = "";
+	private bool IsLoading = true;
+
+	// Util
+	Timer timer = new Timer(4000);
+	Fetch fetch = new Fetch();
+
+
+	protected override async Task OnInitializedAsync()
+	{
+		// Load Tickets
+		var token = await localStorage.GetItemAsync<string>("token");
+		var Role = await localStorage.GetItemAsync<string>("Role");
+
+		if (Role == "Admin")
+		{
+			IsAdmin = true;
+		}
+		else if (Role == "Agent")
+		{
+			IsAgent = true;
+		}
+		else if (Role == "User")
+		{
+			IsUser = true;
+		}
+
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		var data = await fetch.GetData("api/Tickets/Get", null, null, null, headers, RestSharp.Method.Get);
+
+		List<Dictionary<string, object>> res = (List<Dictionary<string, object>>)data["Data"];
+		this.tickets = res;
+		this.IsLoading = false;
+
+		// Load Types
+		this.types = await fetch.GetTypes();
+
+		// Load Status
+		this.statuses = await fetch.GetStatus();
+		StateHasChanged();
+	}
+
+	private void goToTicket(int TicketID)
+	{
+		string link = $"/Ticket/{TicketID}";
+		Navigation.NavigateTo(link);
+	}
+
+
+	/****************************/
+	// Filter and Search
+	/****************************/
+	Dictionary<string, object> FilterBody = new Dictionary<string, object>();
+
+	private void SelectType(Type t)
+	{
+		if (selectedType.ID == t.ID)
+		{
+			selectedType = new Type();
+			FilterBody.Remove("Type");
+		}
+		else
+		{
+			selectedType = t;
+			if (FilterBody.ContainsKey("Type"))
+			{
+				FilterBody.Remove("Type");
+				FilterBody.Add("Type", t.ID);
+			}
+			else
+			{
+				FilterBody.Add("Type", t.ID);
+			}
+		}
+	}
+
+	private void SelectStatus(Status status)
+	{
+		if (selectedStatus.ID == status.ID)
+		{
+			selectedStatus = new Status();
+			FilterBody.Remove("Status");
+		}
+		else
+		{
+			selectedStatus = status;
+			if (FilterBody.ContainsKey("Status"))
+			{
+				FilterBody.Remove("Status");
+				FilterBody.Add("Status", status.ID);
+			}
+			else
+			{
+				FilterBody.Add("Status", status.ID);
+			}
+		}
+	}
+
+	private void SelectPriority(string Priority)
+	{
+		if (selectedPriority == Priority)
+		{
+			selectedPriority = "";
+			FilterBody.Remove("Priority");
+		}
+		else
+		{
+			selectedPriority = Priority;
+			if (FilterBody.ContainsKey("Priority"))
+			{
+				FilterBody.Remove("Priority");
+				FilterBody.Add("Priority", Priority);
+			}
+			else
+			{
+				FilterBody.Add("Priority", Priority);
+			}
+		}
+	}
+
+	private void SortDate(string Date)
+	{
+		if (date == Date)
+		{
+			date = "";
+			FilterBody.Remove("Date");
+		}
+		else
+		{
+			date = Date;
+			if (FilterBody.ContainsKey("Date"))
+			{
+				FilterBody.Remove("Date");
+				FilterBody.Add("Date", Date);
+			}
+			else
+			{
+				FilterBody.Add("Date", Date);
+			}
+		}
+	}
+
+	private void GetClosed()
+	{
+		this.Closed = 1;
+		Filter();
+	}
+
+	private async void Filter()
+	{
+
+		var token = await localStorage.GetItemAsync<string>("token");
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		if (!string.IsNullOrEmpty(query))
+		{
+			if (FilterBody.ContainsKey("searchQuery"))
+			{
+				FilterBody.Remove("searchQuery");
+				FilterBody.Add("searchQuery", query);
+			}
+			else
+			{
+				FilterBody.Add("searchQuery", query);
+			}
+		}
+
+		if (FilterBody.ContainsKey("Closed"))
+		{
+			FilterBody.Remove("Closed");
+			FilterBody.Add("Closed", Closed);
+		}
+		else
+		{
+			FilterBody.Add("Closed", Closed);
+		}
+		this.Closed = 0;
+
+		var data = await fetch.GetData("api/Tickets/Filter", FilterBody, null, null, headers, RestSharp.Method.Post);
+
+		int statusCode = (int)data["StatusCode"];
+		List<Dictionary<string, object>> res = (List<Dictionary<string, object>>)data["Data"];
+		this.tickets = res;
+		StateHasChanged();
+	}
+
+
+	/****************************/
+	// Manage Tickets (Priority, Status, Type)
+	/****************************/
+	private async void manage(string ticketID, int ID, string operation, dynamic data, dynamic ticket)
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		Dictionary<string, object> body = new Dictionary<string, object>();
+		string url = "";
+
+		if (operation == "Type")
+		{
+			body.Add("type", "Type");
+			body.Add("typeID", ID);
+			body.Add("TicketID", ticketID);
+			url = "api/Tickets/Update";
+		}
+
+		if (operation == "Status")
+		{
+			body.Add("type", "Status");
+			body.Add("statusID", ID);
+			body.Add("TicketID", ticketID);
+			url = "api/Tickets/Update";
+		}
+
+		if (operation == "Priority")
+		{
+			body.Add("type", "Priority");
+			body.Add("Priority", data);
+			body.Add("TicketID", ticketID);
+			url = "api/Tickets/Update";
+		}
+
+
+		var res = await fetch.GetData(url, body, null, null, headers, RestSharp.Method.Patch);
+
+		int statusCode = (int)res["StatusCode"];
+
+		if (statusCode == 200)
+		{
+			timer.Elapsed += OnTimedEvent;
+
+
+			if (operation == "Type")
+			{
+				timer.Start();
+				MessageBox("Ticket Type", "Ticket Updated");
+				ticket["TypeNameEN"] = data.NameEN;
+			}
+
+			if (operation == "Status")
+			{
+				timer.Start();
+				MessageBox("Ticket Status", "Ticket Updated");
+				ticket["StatusNameEN"] = data.NameEN;
+			}
+
+			if (operation == "Priority")
+			{
+				timer.Start();
+				MessageBox("Ticket Priority", "Ticket Updated");
+				ticket["Priority"] = data;
+			}
+
+			StateHasChanged();
+		}
+	}
+
+	private void MessageBox(string MessageTitle, string MessageDescription)
+	{
+		this.newActivity = true;
+		this.MessageTitle = MessageTitle;
+		this.MessageDescription = MessageDescription;
+	}
+
+	private void OnTimedEvent(object source, ElapsedEventArgs e)
+	{
+		this.newActivity = false;
+		this.MessageTitle = "";
+		this.MessageDescription = "";
+		InvokeAsync(StateHasChanged);
+		timer.Stop();
+	}
+
+	private void goToSend()
+	{
+		Navigation.NavigateTo("/SendTicket");
+	}
+}
+
+
+<div class="dashboard">
+	<Sidebar />
+
+	<!--======= Manage Tickets =======-->
+	<section class="ManageTickets" id="Manage">
+		<!--======= Manage Tickets Title =======-->
+		<h2 class="section__title">Manage Tickets</h2>
+		<!--======= Manage Tickets Title =======-->
+		<!--======= Filters =======-->
+		<div class="filters">
+			<div class="search">
+				<!--======= Search form =======-->
+				<input type="text" class="search__input" id="search" name="query" placeholder="Search" @bind="query">
+				<button class="search__button" @onclick='Filter'>
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</button>
+				<!--======= Search form =======-->
+			</div>
+
+			<div class="dropdown">
+				<!--======= Sort by types =======-->
+				<div class="sort__button">
+					<span>Type: @selectedType.NameEN</span>
+					<ul class="sort__list">
+						@foreach (var type in types)
+						{
+							<li @onclick="() => SelectType(type)">@type.NameEN</li>
+						}
+					</ul>
+				</div>
+				<!--======= Sort by types =======-->
+				<!--======= Sort by Status =======-->
+				<div class="sort__button">
+					<span>Status: @selectedStatus.NameEN</span>
+					<ul class="sort__list">
+						@foreach (var status in statuses)
+						{
+							<li @onclick="() => SelectStatus(status)">@status.NameEN</li>
+						}
+						<li @onclick='GetClosed'>Closed</li>
+					</ul>
+				</div>
+				<!--======= Sort by Status =======-->
+				<!--======= Sort by Priority =======-->
+				<div class="sort__button">
+					<span>Priority: @selectedPriority</span>
+					<ul class="sort__list">
+						<li @onclick='() => SelectPriority("High")'><span>High</span></li>
+						<li @onclick='() => SelectPriority("Normal")'><span>Normal</span></li>
+						<li @onclick='() => SelectPriority("Low")'><span>Low</span></li>
+					</ul>
+				</div>
+				<!--======= Sort by Priority =======-->
+				<!--======= Sort by Date =======-->
+				<div class="sort__button">
+					<span>Date: @date</span>
+					<ul class="sort__list">
+						<li @onclick='() => SortDate("Newest")'><span>Newest</span></li>
+						<li @onclick='() => SortDate("Oldest")'><span>Oldest</span></li>
+					</ul>
+				</div>
+				<!--======= Sort by Date =======-->
+			</div>
+		</div>
+		<!--======= Filters =======-->
+		<!--============ Tickets ============-->
+		<div class="tickets">
+			@if (!IsLoading)
+			{
+				@if (tickets.Count != 0)
+				{
+					@foreach (var ticket in tickets)
+					{
+						<div class="ticket">
+							<div class="user__info">
+								<img src="./Images/envelope.svg" width="30" height="30">
+							</div>
+							<div class="ticket__info">
+								<h3 class="ticket__subject">@ticket["Subject"]</h3>
+							</div>
+							<h4 class="ticket__user">@ticket["FullName"]</h4>
+							<p class="ticket__date">@(ticket["Date"].ToString().Split(" ").First())</p>
+
+							<div class="row">
+								<div class="ticket__priority">
+									<div class="current__priority">
+										@if (ticket["Priority"].ToString() == "High")
+										{
+											<div class="High"></div>
+											@ticket["Priority"]
+										}
+										else if (ticket["Priority"].ToString() == "Normal")
+										{
+											<div class="Normal"></div>
+											@ticket["Priority"]
+										}
+										else if (ticket["Priority"].ToString() == "Low")
+										{
+											<div class="Low"></div>
+											@ticket["Priority"]
+										}
+										@if (!IsUser)
+										{
+											<i class="fa-solid fa-chevron-down arrrow"></i>
+										}
+									</div>
+									@if (IsAdmin || IsAgent)
+									{
+										<div class="priorities__list">
+											<div class="priority__list__item" @onclick='() => manage(ticket["TicketID"].ToString(), 0, "Priority", "Low", ticket)'>Low</div>
+											<div class="priority__list__item" @onclick='() => manage(ticket["TicketID"].ToString(), 1, "Priority", "Normal", ticket)'>Normal</div>
+											<div class="priority__list__item" @onclick='() => manage(ticket["TicketID"].ToString(), 2, "Priority", "High", ticket)'>High</div>
+										</div>
+									}
+								</div>
+								<div class="ticket__status">
+									<div class="current__status">
+										<i class="fa-solid fa-spinner"></i>
+										@if (ticket["StatusNameEN"] == null)
+										{
+											string no = "No Status";
+											@((MarkupString)no)
+										}
+										else
+										{
+											@ticket["StatusNameEN"]
+										}
+									</div>
+									@if (IsAdmin || IsAgent)
+									{
+										<div class="status__list">
+											@foreach (var status in statuses)
+											{
+												<div class="status__list__item" @onclick='() => manage(ticket["TicketID"].ToString(), status.ID, "Status", status, ticket)'>@status.NameEN</div>
+											}
+										</div>
+									}
+								</div>
+								<div class="ticket__type">
+									<div class="current__type">
+										<i class="fa-regular fa-bookmark"></i>
+										@if (ticket["TypeNameEN"] == null)
+										{
+											string no = "No Type";
+											@((MarkupString)no)
+										}
+										else
+										{
+											@ticket["TypeNameEN"]
+										}
+									</div>
+									@if (IsAdmin || IsAgent)
+									{
+										<div class="types__list">
+											@foreach (var type in types)
+											{
+												<div class="types__list__item" @onclick='() => manage(ticket["TicketID"].ToString(), type.ID, "Type", type, ticket)'>@type.NameEN</div>
+											}
+										</div>
+									}
+								</div>
+							</div>
+
+							<div class="reply">
+								<button class="reply__btn" @onclick='() => goToTicket(int.Parse(ticket["TicketID"].ToString()))'>
+									Reply <i class="fa-solid fa-paper-plane"></i>
+								</button>
+							</div>
+
+							@if ((bool)ticket["Closed"])
+							{
+								<div class="isTicketClosed">
+									Closed
+								</div>
+							}
+						</div>
+					}
+				}
+				else
+				{
+					<h3 style="color:#eee">There is no Tickets yet</h3>
+				}
+			}
+			else
+			{
+				<div class="loader"></div>
+			}
+
+		</div>
+		<!--============ Tickets Table ============-->
+	</section>
+	<!--======= Manage Tickets =======-->
+	@if (newActivity)
+	{
+		<div class="messageBox">
+			<div class="message__icon">
+				<img src="./Images/check.svg" width="30" height="30">
+			</div>
+			<div class="message__info">
+				<div class="message__title">
+					<h2>@MessageTitle</h2>
+				</div>
+				<div class="message__content">
+					<span>@MessageDescription</span>
+				</div>
+			</div>
+		</div>
+	}
+	<button class="btn" @onclick="goToSend">
+		<img src="./Images/plus.svg">
+	</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+
+
+	setTimeout(() => {
+		$(".current__priority,.current__status,.current__type").click(function () {
+			let i = $($($(this)[0].parentNode)[0].children[1]).hasClass("showDropdown");
+			if (!i) {
+				$(".priorities__list,.status__list,.types__list").removeClass("showDropdown");
+
+				$(".arrow").removeClass("fa-bounce");
+				$(".ticket__priority,.ticket__status,.ticket__type").removeClass("borderBottom");
+
+				// Show Dropdown
+				$($($(this)[0].parentNode)[0].children[1]).addClass("showDropdown");
+
+				// Remove bottom Radius for button
+				$($($(this)[0].parentNode)[0]).addClass("borderBottom");
+
+				// Animate Arrow
+				$($($($($(this)[0].parentNode)[0])[0].children[0])[0].children[1]).addClass("fa-bounce");
+				setTimeout(() => {
+					$($($($($(this)[0].parentNode)[0])[0].children[0])[0].children[1]).removeClass("fa-bounce");
+				}, 400);
+			} else {
+				$($($(this)[0].parentNode)[0].children[1]).removeClass("showDropdown");
+
+				$($($($($(this)[0].parentNode)[0])[0].children[0])[0].children[1]).addClass("fa-bounce");
+				setTimeout(() => {
+					$($($($($(this)[0].parentNode)[0])[0].children[0])[0].children[1]).removeClass("fa-bounce");
+				}, 400);
+
+				$($($(this)[0].parentNode)[0]).removeClass("borderBottom");
+			}
+		});
+
+		$(document).click(function (e) {
+			let priority = $(e.target).hasClass("current__priority");
+			let status = $(e.target).hasClass("current__status");
+			let type = $(e.target).hasClass("current__type");
+
+			if (!priority) {
+				$(".priorities__list").removeClass("showDropdown");
+				$(".arrow").removeClass("fa-bounce");
+				$(".ticket__priority").removeClass("borderBottom");
+			}
+
+			if(!status) {
+				$(".status__list").removeClass("showDropdown");
+				$(".arrow").removeClass("fa-bounce");
+				$(".ticket__status").removeClass("borderBottom");
+			}
+
+			if(!type) {
+				$(".types__list").removeClass("showDropdown");
+				$(".arrow").removeClass("fa-bounce");
+				$(".ticket__type").removeClass("borderBottom");
+			}
+		});
+	}, 1000);
+
+</script>

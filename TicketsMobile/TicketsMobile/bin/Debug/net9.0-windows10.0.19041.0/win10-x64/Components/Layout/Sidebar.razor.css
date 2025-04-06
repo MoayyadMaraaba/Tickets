@@ -1,0 +1,132 @@
+.header {
+    height: 80px;
+    background-color: var(--BG2-COLOR);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.line {
+    width: 40px;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 0.6rem;
+}
+
+.header__info {
+    color: #fff;
+}
+
+
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: #5c5c5c;
+    position: fixed;
+    left: -500px;
+    z-index: 3500;
+    transition: all 300ms ease-in-out;
+}
+
+.left {
+    left: 0;
+}
+
+
+.list__title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    color: #fff;
+}
+
+    .list__title h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+.close__button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.line1 {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    transform-origin: center;
+    transition: all 300ms ease-in-out;
+}
+
+    .line1:first-child {
+        transform: rotate(45deg);
+    }
+
+    .line1:last-child {
+        transform: rotate(-45deg)
+    }
+
+.close__button:hover .line1 {
+    cursor: pointer;
+    background-color: var(--PRIMARY-COLOR);
+}
+
+.list__item {
+    display: flex;
+    height: 80px;
+    transition: all 300ms ease-in-out;
+    color: #fff;
+}
+
+.link__icon {
+    display: flex;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+}
+
+.link__text {
+    width: 220px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.list__item:hover {
+    background-color: var(--PRIMARY-COLOR);
+}
+
+.current {
+    margin: 2rem;
+    background-color: var(--PRIMARY-COLOR);
+    border-radius: 5px;
+}
+
+
+.dispage {
+    position: fixed;
+    z-index: 3500;
+    background-color: #41414131;
+    width: calc(100% - 300px);
+    min-height: 100vh;
+    left: 300px;
+    display: none;
+}
+
+.block {
+    display: block;
+}
+.link__profile {
+    color:#eee;
+}

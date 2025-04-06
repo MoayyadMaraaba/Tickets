@@ -1,0 +1,384 @@
+﻿@page "/Profile"
+@using TicketsMobile.Components.Layout;
+@using TicketsMobile.API;
+@using System.Timers;
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject IJSRuntime JSRuntime
+
+@code {
+	// Helper Classes
+	private Fetch fetch = new Fetch();
+	private Timer timer = new Timer(4000);
+
+	// Loaded Data
+	private string FullName = string.Empty;
+	private string Email = string.Empty;
+	private string PhoneNumber = string.Empty;
+
+	// UI variables
+	private bool NewActivity = false;
+	private string MessageTitle = string.Empty;
+	private string MessageDescription = string.Empty;
+
+	// Password Form
+	private string CurrentPassword = string.Empty;
+	private string NewPassword = string.Empty;
+	private string ConfirmPassword = string.Empty;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		// Load User information
+		var response = await fetch.GetData("api/Users/Get/Info", null, null, null, headers, RestSharp.Method.Get);
+
+		Dictionary<string, object> data = (Dictionary<string, object>)response["Data"];
+
+		FullName = data["FullName"].ToString();
+		Email = data["Email"].ToString();
+		PhoneNumber = data["PhoneNumber"].ToString();
+	}
+
+	Dictionary<string, object> body = new Dictionary<string, object>();
+
+	private void OnChange(string key, string value)
+	{
+		if (body.ContainsKey(key))
+		{
+			body.Remove(key);
+			body.Add(key, value);
+		}
+		else
+		{
+			body.Add(key, value);
+		}
+		StateHasChanged();
+	}
+
+	private async void UpdateInformation()
+	{
+		int errors = 0;
+
+		foreach (var data in body)
+		{
+			if (string.IsNullOrWhiteSpace(data.Value.ToString()))
+			{
+				await JSRuntime.InvokeVoidAsync("fillError", data.Key, "Please Fill this field");
+				errors++;
+			}
+		}
+		bool IsAnythingChanged = true;
+		if(body.Count == 0)
+		{
+			IsAnythingChanged = false;
+		}
+
+		if (errors == 0 && IsAnythingChanged)
+		{
+			var token = await localStorage.GetItemAsync<string>("token");
+
+			Dictionary<string, string> headers = new Dictionary<string, string>
+			{
+				{"authorization", token}
+			};
+
+			var response = await fetch.GetData("api/Users/Update", body, null, null, headers, RestSharp.Method.Patch);
+			int StatusCode = (int)response["StatusCode"];
+			Dictionary<string, object> data = (Dictionary<string, object>)response["Data"];
+
+			if (StatusCode == 400)
+			{
+				string message = data["err"].ToString();
+				if (message == "Email already exists")
+				{
+					await JSRuntime.InvokeVoidAsync("fillError", "Email", message);
+				}
+				if (message == "Phone already exists")
+				{
+					await JSRuntime.InvokeVoidAsync("fillError", "PhoneNumber", message);
+				}
+			}
+
+			if (StatusCode == 200)
+			{
+				timer.Elapsed += OnTimedEvent;
+				timer.Start();
+				MessageBox("Profile Updated", "Information Updated");
+				StateHasChanged();
+			}
+		}
+
+	}
+
+	private void MessageBox(string MessageTitle, string MessageDescription)
+	{
+		this.NewActivity = true;
+		this.MessageTitle = MessageTitle;
+		this.MessageDescription = MessageDescription;
+	}
+
+	private void OnTimedEvent(object source, ElapsedEventArgs e)
+	{
+		this.NewActivity = false;
+		this.MessageTitle = "";
+		this.MessageDescription = "";
+		InvokeAsync(StateHasChanged);
+		timer.Stop();
+	}
+
+	private async void UpdatePassword()
+	{
+		int errors = 0;
+
+		Dictionary<string, object> body = new Dictionary<string, object>();
+
+		body.Add("CurrentPassword", CurrentPassword);
+		body.Add("NewPassword", NewPassword);
+		body.Add("ConfirmPassword", ConfirmPassword);
+
+		foreach (var data in body)
+		{
+			if (string.IsNullOrWhiteSpace(data.Value.ToString()))
+			{
+				await JSRuntime.InvokeVoidAsync("fillError", data.Key, "Please Fill this field");
+				errors++;
+			}
+		}
+
+		if (NewPassword != ConfirmPassword)
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "NewPassword", "Passwords don't match");
+			errors++;
+		}
+
+		if (errors == 0)
+		{
+			var token = await localStorage.GetItemAsync<string>("token");
+
+			Dictionary<string, string> headers = new Dictionary<string, string>
+			{
+				{"authorization", token}
+			};
+
+			var response = await fetch.GetData("api/Users/Update/Password", body, null, null, headers, RestSharp.Method.Patch);
+			int StatusCode = (int)response["StatusCode"];
+			Dictionary<string, object> data = (Dictionary<string, object>)response["Data"];
+			if (StatusCode == 400)
+			{
+				string message = data["msg"].ToString();
+				if (message == "Wrong Password")
+				{
+					await JSRuntime.InvokeVoidAsync("fillError", "CurrentPassword", message);
+				}
+			}
+
+			if (StatusCode == 200)
+			{
+				timer.Elapsed += OnTimedEvent;
+				timer.Start();
+				MessageBox("Profile Updated", "Password Updated");
+				StateHasChanged();
+			}
+		}
+	}
+
+
+
+	private void OnFullNameChanged(ChangeEventArgs e)
+	{
+		FullName = e.Value.ToString(); 
+		OnChange("FullName", FullName);
+	}
+
+
+	private void OnEmailChanged(ChangeEventArgs e)
+	{
+		Email = e.Value.ToString();
+		OnChange("Email", Email);
+	}
+
+
+	private void OnPhoneNumberChanged(ChangeEventArgs e)
+	{
+		PhoneNumber = e.Value.ToString();
+		OnChange("PhoneNumber", PhoneNumber);
+	}
+
+}
+
+<div class="profileView">
+	<Sidebar />
+	<section class="Manage">
+		<h1 class="section__title">Information</h1>
+
+		<button class="updatePassword">Update Password</button>
+		<div class="user__information">
+			<!--========= FullName Input =========-->
+			<div class="input">
+				<label for="FullName" class="input__title">FullName</label>
+				<br>
+				<input type="text" class="text__input" placeholder="Full Name" id="FullName" @oninput='OnFullNameChanged' value="@FullName" />
+				<br>
+				<label for="FullName" class="input__error FullName"></label>
+			</div>
+
+			<!--========= Email Input =========-->
+			<div class="input">
+				<label for="Email" class="input__title">Email</label>
+				<br>
+				<input type="text" class="text__input" placeholder="Email" id="Email" @oninput='OnEmailChanged' value="@Email" />
+				<br>
+				<label for="Email" class="input__error Email"></label>
+			</div>
+
+			<!--========= PhoneNumber Input =========-->
+			<div class="input">
+				<label for="PhoneNumber" class="input__title">Phone Number</label>
+				<br>
+				<input type="text" class="text__input" placeholder="Phone Number" id="PhoneNumber" @oninput='OnPhoneNumberChanged' value="@PhoneNumber" />
+				<br>
+				<label for="PhoneNumber" class="input__error PhoneNumber"></label>
+			</div>
+
+			<div class="input">
+				<button class="submit__button" @onclick="UpdateInformation">Save</button>
+			</div>
+		</div>
+
+		<button class="updateInformation">Update Information</button>
+		<div class="user__password">
+			<!--========= Current Password Input =========-->
+			<div class="input">
+				<label for="CurrentPassword" class="input__title">Current Password</label>
+				<br>
+				<input type="password" class="text__input" placeholder="Current Password" id="CurrentPassword" @bind="CurrentPassword" />
+				<br>
+				<label for="CurrentPassword" class="input__error CurrentPassword"></label>
+			</div>
+			<!--========= New Password Input =========-->
+			<div class="input">
+				<label for="NewPassword" class="input__title">New Password</label>
+				<br>
+				<input type="password" class="text__input" placeholder="New Password" id="NewPassword" @bind="NewPassword" />
+				<br>
+				<label for="NewPassword" class="input__error NewPassword"></label>
+			</div>
+			<!--========= Confirm Password Input =========-->
+			<div class="input">
+				<label for="ConfirmPassword" class="input__title">Confirm Password</label>
+				<br>
+				<input type="password" class="text__input" placeholder="Confirm Password" id="ConfirmPassword" @bind="ConfirmPassword" />
+				<br>
+				<label for="ConfirmPassword" class="input__error ConfirmPassword"></label>
+			</div>
+
+			<div class="input">
+				<button class="submit__button" @onclick="UpdatePassword">Update</button>
+			</div>
+		</div>
+	</section>
+
+	@if (NewActivity)
+	{
+		<div class="te">
+			<div class="messageBox">
+				<div class="message__icon">
+					<img src="./Images/check.svg" width="30" height="30">
+				</div>
+				<div class="message__info">
+					<div class="message__title">
+						<h3>@MessageTitle</h3>
+					</div>
+					<div class="message__content">
+						<span>@MessageDescription</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+
+	<script>
+
+		$("#FullName").on("focus", function () {
+			$(this).removeClass("error__class");
+			$(".FullName").text("");
+		});
+
+		$("#FullName").blur(function () {
+			$(this).removeClass("error__class");
+		});
+
+		$("#Email").on("focus", function () {
+			$(this).removeClass("error__class");
+			$(".Email").text("");
+		});
+
+		$("#Email").blur(function () {
+			$(this).removeClass("error__class");
+		});
+
+
+		$("#PhoneNumber").on("focus", function () {
+			$(this).removeClass("error__class");
+			$(".PhoneNumber").text("");
+		});
+
+		$("#PhoneNumber").blur(function () {
+			$(this).removeClass("error__class");
+		});
+
+		$("#CurrentPassword").on("focus", function () {
+			$(this).removeClass("error__class");
+			$(".CurrentPassword").text("");
+		});
+
+		$("#CurrentPassword").blur(function () {
+			$(this).removeClass("error__class");
+		});
+
+
+		$("#NewPassword").on("focus", function () {
+			$(this).removeClass("error__class");
+			$(".NewPassword").text("");
+		});
+
+		$("#NewPassword").blur(function () {
+			$(this).removeClass("error__class");
+		});
+
+		$("#ConfirmPassword").on("focus", function () {
+			$(this).removeClass("error__class");
+			$(".ConfirmPassword").text("");
+		});
+
+		$("#ConfirmPassword").blur(function () {
+			$(this).removeClass("error__class");
+		});
+
+
+		$(".updatePassword").click(function() {
+			$(".updatePassword,.user__information").fadeOut(200)
+			setTimeout(() => {
+				$(".updateInformation,.user__password").fadeIn(200)
+			}, 205);
+		});
+
+		$(".updateInformation").click(function() {
+			$(".updateInformation,.user__password").fadeOut(200)
+			setTimeout(() => {
+				$(".updatePassword,.user__information").fadeIn(200)
+			}, 205);
+		});
+
+		function fillError(element, message) {
+			$(`#${element}`).addClass("error__class");
+			$(`.${element}`).text(message);
+		}
+	</script>
+</div>

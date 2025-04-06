@@ -1,0 +1,158 @@
+{
+    "Header": {
+        "Home": "Home",
+        "Login": "Login",
+        "Register": "Register",
+        "Dashboard": "Dashboard",
+        "Logout": "Logout"
+    },
+    "Footer": {
+        "Name": "Zimam Solutions",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi porro velit officia mollitia? Soluta reprehenderit repellat nam, cum aspernatur vel.",
+        "Home": "Home",
+        "Contact": "Contact",
+        "Dashboard": "Dashboard",
+        "Email": "Email",
+        "Phone": "Phone",
+        "Address": "Address"
+    },
+    "HomePage": {
+        "Welcome": "Welcome to",
+        "title": "Service Board",
+        "welcomeDescription1": "Service Board is a system that helping Companies",
+        "welcomeDescription2": "to contact with their customers."
+    },
+    "LoginPage": {
+        "Welcome": "Welcome Back",
+        "Email": "Email",
+        "Password": "Password",
+        "Login": "Login",
+        "Home": "Home",
+        "About": "About",
+        "Contact": "Contact",
+        "Forget": "Forget Password ?",
+        "MissingEmail": "Please Enter an Email",
+        "MissingPassword": "Please Enter a Password",
+        "NoEmailFound": "Email doesn't exists",
+        "WrongPassword": "Password is wrong"
+    },
+    "RegisterPage": {
+        "Welcome": "Welcome",
+        "FullName": "Full Name",
+        "Email": "Email",
+        "PhoneNumber": "Phone number",
+        "Password": "Password",
+        "Register": "Register",
+        "Account": "Have an Account ?",
+        "MissingFullName": "Please Enter a Full Name",
+        "MissingEmail": "Please Enter an Email",
+        "MissingPhoneNumber": "Please Enter a Phone nubmer",
+        "MissingPassword": "Please Enter a Password",
+        "EmailAlreadyExists": "Email already exists",
+        "PhoneAlreadyExists": "Phone already exists"
+    },
+    "ProfilePage": {
+        "title": "Information",
+        "UpdatePassword": "Update Password",
+        "Save": "Save",
+        "UpdateInformation": "Update Information",
+        "CurrentPassword": "Current Password",
+        "NewPassword": "New Password",
+        "ConfirmPassword": "Confirm Password",
+        "Update": "Update",
+        "MissingInput": "Please Enter this field",
+        "Dont": "Password don't match",
+        "ProfileUpdated": "Profile Updated",
+        "PasswordUpdated": "Password Updated",
+        "Wrong": "Wrong Password",
+        "EmailAlreadyExists": "Email already exists",
+        "PhoneAlreadyExists": "Phone already exists"
+    },
+    "Dashboard": {
+        "Header": {
+            "Dashboard": "Dashboard",
+            "Send": "Send Ticket",
+            "Profile": "Profile",
+            "Logout": "Logout"
+        },
+        "Sidebar": {
+            "Dashboard": "Dashboard",
+            "Send": "Send Ticket",
+            "Management": "Management",
+            "Agents": "Agents"
+        },
+        "title": "Manage Tickets",
+        "Search": "Search",
+        "Type": "Type",
+        "Date": "Date",
+        "Status": "Status",
+        "Priority": "Priority",
+        "Newest": "Newest",
+        "oldest": "Oldest",
+        "TicketsTable": {
+            "Subject": "Subject",
+            "Status": "Status",
+            "Type": "Type",
+            "Agent": "Agent",
+            "Priority": "Priority",
+            "Date": "Date",
+            "Manage": "Manage",
+            "NoAgent": "No Agent"
+        }
+    },
+    "CreateTicket": {
+        "Title": "Send Ticket",
+        "SelectType": "Select Type",
+        "Subject": "Subject",
+        "Message": "Message",
+        "Type": "Type",
+        "Submit": "Send",
+        "TicketInfo": "Information",
+        "Attachments": "Attachments",
+        "AddAttachments": "Add Attachments",
+        "Uploading": "Uploading",
+        "MissingSubject": "Please Enter a Subject",
+        "MissingMessage": "Please Enter a Message",
+        "MissingType": "Please Select a Type",
+        "File": "The file ",
+        "FileTypeNotAllowed": "type isn't allowed",
+        "FileTooLarge": "File is too large"
+    },
+    "Management": {
+        "title": "Manage",
+        "Types": "Types",
+        "Status": "Status",
+        "Add": "Add",
+        "Edit": "Edit",
+        "TypeNameEN": "Type Name (EN)",
+        "TypeNameAR": "Type Name (AR)",
+        "MissingInput": "Please Enter this field",
+        "StatusNameEN": "Status Name (EN)",
+        "StatusNameAR": "Status Name (AR)"
+    },
+    "Ticket": {
+        "TicketInformation": "Ticekt Information",
+        "Status": "Status",
+        "Types": "Type",
+        "Priority": "Priority",
+        "Ticket": "Ticket",
+        "Agent": "Agent",
+        "Message": "Message",
+        "Closed": "This Ticket is Closed"
+    },
+    "Agents": {
+        "title": "Manage Agents",
+        "Add": "Add +",
+        "Add2": "Add Agent",
+        "AgentFullName": "Agent FullName",
+        "AgentEmail": "Agent Email",
+        "AgentPassword": "Agent Password", 
+        "AgentPhoneNumber": "Agent Phone Number",
+        "MissingInput": "Please Enter this field",
+        "SelectRole": "Select Role",
+        "Edit": "Edit",
+        "Success": "Success",
+        "Description": "Agent Created",
+        "AgentUpdated": "Agent Updated"
+    }
+}

@@ -1,0 +1,57 @@
+﻿@page "/"
+@implements IAsyncDisposable
+@using TicketsMobile.API;
+@inject NavigationManager Navigation;
+@inject Blazored.LocalStorage.ILocalStorageService localStorage;
+
+
+<div class="page @animationClass">
+	<div class="home"> 
+		<!--========= Header Section =========-->
+		<div class="home__header">
+			<img src="Images/logo.png" class="header__logo" />
+			<h2 class="header__text">Zimam Solutions</h2>
+		</div>
+
+		<!--========= Hero Section =========-->
+		<div class="home__hero">
+			<img src="Images/hero.svg" class="hero__image" />
+		</div>
+
+		<!--========= functions Section =========-->
+		<div class="function">
+			<a class="btn__login" href="/Login">Contact Us</a>
+		</div>
+	</div>
+</div>
+
+@code {
+	private string animationClass = "fade-enter";
+
+	protected override async Task OnInitializedAsync()
+	{
+		Dev dev = new Dev();
+		var s = await dev.DirectLogin();
+
+		await localStorage.SetItemAsync("token", s.Item2["token"].ToString());
+		await localStorage.SetItemAsync("Role", s.Item2["role"].ToString());
+
+		Navigation.NavigateTo("/Profile");
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			animationClass = "fade-enter";
+		}
+
+		await base.OnAfterRenderAsync(firstRender);
+	}
+
+	public async ValueTask DisposeAsync()
+	{
+		animationClass = "fade-exit";
+		StateHasChanged();
+	}
+}

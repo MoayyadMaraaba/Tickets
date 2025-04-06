@@ -1,0 +1,141 @@
+﻿@using TicketsMobile.API;
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager Navigation
+
+@code {
+	Fetch fetch = new Fetch();
+	private string Username = "";
+	private string Role = "";
+	private bool IsAdmin = false;
+	private bool IsAgent = false;
+	private bool IsUser = false;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+		Role = await localStorage.GetItemAsync<string>("Role");
+
+		if (token != null)
+		{
+			int code = await fetch.Verify(token);
+
+			if (code == 401)
+			{
+				localStorage.ClearAsync();
+				Navigation.NavigateTo("/Login");
+				return;
+			}
+		}
+
+
+		if (Role == "Admin")
+		{
+			IsAdmin = true;
+		}
+		else if (Role == "Agent")
+		{
+			IsAgent = true;
+		}
+		else if (Role == "User")
+		{
+			IsUser = true;
+		}
+
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		var data = await fetch.GetData("api/Users/Get/Info", null, null, null, headers, RestSharp.Method.Get);
+
+		int StatusCode = (int)data["StatusCode"];
+		Dictionary<string, object> res = (Dictionary<string, object>)data["Data"];
+
+		Username = res["FullName"].ToString();
+	}
+
+	private async void Logout()
+	{
+		await localStorage.RemoveItemAsync("token");
+		await localStorage.RemoveItemAsync("Role");
+
+		Navigation.NavigateTo("/Login");
+	}
+}
+
+<script>
+
+	function openSidebar(state) {
+
+		let sidebar = document.getElementById("sidebar");
+		let disable = document.getElementById("disable");
+
+		if(state == "Open") {
+			sidebar.classList.add("left");
+			setTimeout(() => {
+				disable.classList.add("block");
+			}, 400);
+		} else {
+			sidebar.classList.remove("left");
+			disable.classList.remove("block");
+		}
+	}
+</script>
+
+<aside class="sidebar" id="sidebar">
+	<div class="sidebar__list">
+		<div class="list__title">
+			<img src="./Images/logo.png" width="50" height="50">
+			<h2>Zimam</h2>
+			<button class="close__button" onclick="openSidebar('Close')">
+				<div class="line1"></div>
+				<div class="line1"></div>
+			</button>
+		</div>
+		<a href="/Dashboard" class="list__item">
+			<span class="link__icon"><i class="fa-solid fa-table-columns"></i></span>
+			<span class="link__text">Dashboard</span>
+		</a>
+		@if (IsAdmin)
+		{
+			<a href="/Management" class="list__item">
+				<span class="link__icon"><i class="fa-solid fa-list-check"></i></span>
+				<span class="link__text">Management</span>
+			</a>
+			<a href="/Agents" class="list__item">
+				<span class="link__icon"><i class="fa-solid fa-users"></i></span>
+				<span class="link__text">Agents</span>
+			</a>
+		}
+		<a href="/SendTicket" class="list__item">
+			<span class="link__icon"><i class="fa-solid fa-plus"></i></span>
+			<span class="link__text">Send Ticket</span>
+		</a>
+		@if (IsUser || IsAgent || IsAdmin)
+		{
+			<a href="/" class="list__item" @onclick='Logout'>
+				<span class="link__icon"><i class="fa-solid fa-arrow-right-from-bracket fa-flip-horizontal"></i></span>
+				<span class="link__text">Logout</span>
+			</a>
+		}
+	</div>
+</aside>
+
+<div class="dispage" id="disable" onclick="openSidebar('Close')"></div>
+
+<!--============ Header ============-->
+<div class="header">
+	<div class="header__button" onclick="openSidebar('Open')">
+		<button class="open__button">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</button>
+	</div>
+	<div class="header__info">
+		<a href="/Profile" class="link__profile">
+			<h4>@Username , @Role</h4>
+		</a>
+	</div>
+</div>
+<!--============ Header ============-->

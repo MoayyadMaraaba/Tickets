@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --BG-COLOR: #121212;
+    --BG2-COLOR: #1d1d1d;
+    --FONT-COLOR: #fff;
+    --PRIMARY-COLOR: #8884ff;
+    --HOVER-COLOR: #4f4caf;
+    --ERROR-COLOR: rgb(250, 82, 82);
+}
+
+html, body {
+    /*    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+    font-family: "Poppins", sans-serif;
+}
+/******** Reset ********/
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    border: none;
+    outline: none;
+    background: none;
+}
+/******** Reset ********/
+main {
+    min-height: 100vh;
+}
+/******** Home Page ********/
+.page {
+    background-color: #121212;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.home__header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+
+.header__logo {
+    width: 60px;
+    height: 60px;
+}
+
+.header__text {
+    font-weight: bold;
+    color: var(--FONT-COLOR);
+}
+
+.home__hero {
+    width: 100%;
+    height: 80%;
+    /*    height: 80vh;*/
+}
+
+.hero__image {
+    width: 100%;
+    height: 100%;
+}
+
+.function {
+    width: 100%;
+    padding: 1.2rem;
+}
+
+.btn__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--PRIMARY-COLOR);
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+    .btn__login:hover {
+        color: #fff;
+    }
+/******** Home Page ********/
+/******** Login Page ********/
+.login, .Register {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__title {
+    color: #fff;
+}
+
+.input {
+    padding: 0.7rem;
+}
+
+.input__title {
+    color: var(--FONT-COLOR);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.text__input {
+    width: 365px;
+    height: 45px;
+    padding: 0 1rem;
+    border: 2px solid #bbb;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: var(--FONT-COLOR);
+    transition: all 300ms ease-in-out;
+}
+
+    .text__input:focus {
+        outline-width: 3px;
+        outline-style: solid;
+        outline-color: var(--HOVER-COLOR);
+        border: 2px solid var(--PRIMARY-COLOR);
+    }
+
+.input__error {
+    color: var(--ERROR-COLOR);
+}
+
+.error__class {
+    border: 2px solid var(--ERROR-COLOR);
+}
+
+.text__input::placeholder {
+    font-weight: bold;
+    color: var(--FONT-COLOR);
+}
+
+.input__error {
+    display: block;
+    padding-top: 0.5rem;
+    font-weight: bold;
+    color: var(--ERROR-COLOR);
+}
+
+.submit__button {
+    width: 365px;
+    height: 40px;
+    background-color: var(--PRIMARY-COLOR);
+    margin: 0.5rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 300ms ease-in-out;
+}
+
+    .submit__button:hover {
+        cursor: pointer;
+        background-color: var(--HOVER-COLOR);
+    }
+
+.links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 0;
+}
+
+.form__link {
+    width: 365px;
+    text-align: left;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    transition: all 300ms ease-in-out;
+}
+
+    .form__link:hover {
+        cursor: pointer;
+        color: var(--PRIMARY-COLOR);
+    }
+
+/******** Login Page ********/
+.fade-enter {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.fade-exit {
+    animation: fadeOut 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

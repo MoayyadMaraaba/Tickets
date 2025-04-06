@@ -1,0 +1,471 @@
+﻿@page "/Ticket/{id}"
+@using Newtonsoft.Json
+@using TicketsMobile.Components.Layout;
+@using TicketsMobile.API;
+@using TicketsMobile.Models;
+@using System.Timers;
+@using RestSharp;
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject IJSRuntime JSRuntime
+
+@code {
+
+	[Parameter]
+	public string id { get; set; }
+
+	// Helper classes
+	private Fetch fetch = new Fetch();
+	private Timer timer = new Timer(4000);
+
+	// Load From API
+	private List<Agent> agents = new List<Agent>();
+	private List<Message> Messages = new List<Message>();
+	private Dictionary<string, object> ticket = new Dictionary<string, object>();
+	private string Priority = "";
+	private string Status = "";
+	private string Type = "";
+	private string AgentFullName = "";
+	private long UserID = 0;
+	private bool Closed = false;
+
+	// Message Box Information
+	private bool NewActivity = false;
+	private string MessageTitle = "";
+	private string MessageDescription = "";
+
+	// Viewer
+	private bool Viewer = false;
+	private string Image = "";
+
+	// Message form
+	private string Message = "";
+	private List<IBrowserFile> selectedFiles = new List<IBrowserFile>();
+
+	// Roles
+	private bool IsAdmin = false;
+	private bool IsAgent = false;
+	private bool IsUser = false;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+		var Role = await localStorage.GetItemAsync<string>("Role");
+
+		if (Role == "Admin")
+		{
+			IsAdmin = true;
+		}
+		else if (Role == "Agent")
+		{
+			IsAgent = true;
+		}
+		else if (Role == "User")
+		{
+			IsUser = true;
+		}
+
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		// Load Ticket Information
+		var data = await fetch.GetData("api/Tickets/Get/" + id, null, null, null, headers, RestSharp.Method.Get);
+
+		int StatusCode = (int)data["StatusCode"];
+		List<Dictionary<string, object>> res = (List<Dictionary<string, object>>)data["Data"];
+		ticket = res.First();
+		Priority = ticket["Priority"].ToString();
+		if (ticket["AgentFullName"] != null)
+		{
+			AgentFullName = ticket["AgentFullName"].ToString();
+		}
+		else
+		{
+			AgentFullName = "No Agent";
+		}
+
+		if (ticket["StatusNameEN"] != null)
+		{
+			Status = ticket["StatusNameEN"].ToString();
+		}
+		else
+		{
+			Status = "No Status";
+		}
+
+		if (ticket["TypeNameEN"] != null)
+		{
+			Type = ticket["TypeNameEN"].ToString();
+		}
+		else
+		{
+			Type = "No Type";
+		}
+
+		Closed = (bool)ticket["Closed"];
+
+
+		// Load Messages
+		this.Messages = await fetch.GetMessages(id, token);
+
+		// Load UserID
+		var g = await fetch.GetData("api/Users/Get", null, null, null, headers, RestSharp.Method.Get);
+
+		Dictionary<string, object> user = (Dictionary<string, object>)g["Data"];
+
+		this.UserID = (long)user["ID"];
+
+		if (IsAgent || IsAdmin)
+		{
+			agents = await fetch.GetAgents(token);
+		}
+
+		StateHasChanged();
+	}
+
+	protected override Task OnAfterRenderAsync(bool firstRender)
+	{
+		JSRuntime.InvokeVoidAsync("goToBottom");
+
+		return base.OnAfterRenderAsync(firstRender);
+	}
+
+	private void HandleFileSelected(InputFileChangeEventArgs e)
+	{
+		var files = e.GetMultipleFiles();
+		selectedFiles.Clear();
+
+		foreach (var file in files)
+		{
+			if (file.Size > 30000000)
+			{
+				timer.Elapsed += OnTimedEvent;
+				timer.Start();
+				MessageBox("Error Uploading", "File is too large");
+				break;
+			}
+
+			if (!file.ContentType.StartsWith("image"))
+			{
+				timer.Elapsed += OnTimedEvent;
+				timer.Start();
+				MessageBox("Error Uploading", "File type is not allowed");
+				break;
+			}
+
+			selectedFiles.Add(file);
+		}
+	}
+
+	private void MessageBox(string MessageTitle, string MessageDescription)
+	{
+		this.NewActivity = true;
+		this.MessageTitle = MessageTitle;
+		this.MessageDescription = MessageDescription;
+	}
+
+	private void OnTimedEvent(object source, ElapsedEventArgs e)
+	{
+		this.NewActivity = false;
+		this.MessageTitle = "";
+		this.MessageDescription = "";
+		InvokeAsync(StateHasChanged);
+		timer.Stop();
+	}
+
+	private async void SendMessage()
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		Dictionary<string, object> body = new Dictionary<string, object>
+		{
+			{"Message", Message}
+		};
+
+		var data = await fetch.GetData("api/Messages/Add/" + id, body, "Attachment", selectedFiles, headers, RestSharp.Method.Post);
+
+		// Deserialize Response
+		Dictionary<string, object> me = (Dictionary<string, object>)data["Data"];
+		var s = me["Message"];
+		string a = s.ToString();
+		List<Message> msgs = JsonConvert.DeserializeObject<List<Message>>(a);
+		Messages.Add(msgs[0]);
+		await JSRuntime.InvokeVoidAsync("goToBottom");
+
+		// Reset form
+		Message = "";
+		selectedFiles = new List<IBrowserFile>();
+
+		StateHasChanged();
+	}
+
+	private void OpenViewer(string ImageUrl)
+	{
+		if (Viewer)
+		{
+			Viewer = false;
+			Image = ImageUrl;
+		}
+		else
+		{
+			Viewer = true;
+			Image = ImageUrl;
+		}
+	}
+
+	private async void AssignAgent(string AgnetName, int AgentID)
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		Dictionary<string, object> body = new Dictionary<string, object>
+		{
+			{"TicketID", id},
+			{"AgentID", AgentID}
+		};
+
+		var response = await fetch.GetData("api/Tickets/Assign", body, null, null, headers, RestSharp.Method.Patch);
+
+		int StatusCode = (int)response["StatusCode"];
+		if (StatusCode == 200)
+		{
+			AgentFullName = AgnetName;
+
+			if (AgnetName == null)
+			{
+				AgentFullName = "No Agent";
+			}
+			StateHasChanged();
+		}
+
+
+	}
+
+	private async void CloseTicket(bool Closed)
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		Dictionary<string, object> body = new Dictionary<string, object>
+		{
+			{"ticketID", id},
+			{"Closed", Closed}
+		};
+
+		var response = await fetch.GetData("api/Tickets/Close", body, null, null, headers, RestSharp.Method.Patch);
+		int StatusCode = (int)response["StatusCode"];
+
+		if (StatusCode == 200)
+		{
+			this.Closed = !Closed;
+			StateHasChanged();
+		}
+	}
+}
+
+<div class="ticektPage">
+	<Sidebar />
+
+	<div class="chat">
+		<div class="chat__body" id="chat">
+			<!--========== Messages ==========-->
+			<div class="messages">
+				@foreach (var message in Messages)
+				{
+					if (message.MessageUserID == UserID)
+					{
+						<div class="row">
+							<div class="message response">
+								@message.message
+								<div class="images">
+									@if (!string.IsNullOrEmpty(message.Attachments))
+									{
+										@foreach (var name in JsonConvert.DeserializeObject<List<string>>(message.Attachments))
+										{
+											<div class="image" @onclick='() => OpenViewer(name)'>
+												<img src="@((MarkupString)Fetch.url + "/uploads/" + @name)" width="40" height="40">
+											</div>
+										}
+									}
+								</div>
+							</div>
+						</div>
+					}
+					else
+					{
+						<div class="row">
+							<div class="message client">
+								@message.message
+								<div class="images">
+									@if (!string.IsNullOrEmpty(message.Attachments))
+									{
+										@foreach (var name in JsonConvert.DeserializeObject<List<string>>(message.Attachments))
+										{
+											<div class="image" @onclick='() => OpenViewer(name)'>
+												<img src="@((MarkupString)Fetch.url + "/uploads/" + @name)" width="40" height="40">
+											</div>
+										}
+									}
+								</div>
+							</div>
+						</div>
+					}
+				}
+			</div>
+
+			<!--========== Settings ==========-->
+			<div class="ticket__settings">
+				<button class="settings__button" onclick="openSettings()">
+					<i class="fa-solid fa-gear"></i>
+				</button>
+			</div>
+
+			<!--========== Ticket Sidebar ==========-->
+			<div class="ticket__sidebar" id="ticket__sidebar">
+				<button class="close__ticket__sidebar" onclick="closeSettings()">
+					<i class="fa-solid fa-xmark"></i>
+				</button>
+				<div class="sidebar__content">
+					<div class="Priority">
+						<h4><i class="fa-solid fa-flag"></i> Priority : Low</h4>
+					</div>
+					<div class="Status">
+						<h4><i class="fa-solid fa-spinner"></i> Status : Completed</h4>
+					</div>
+					<div class="Type">
+						<h4><i class="fa-solid fa-bookmark"></i> Type : Bug</h4>
+					</div>
+				</div>
+
+				<div class="selectAgent">
+					<h3>
+						Agent: @AgentFullName
+						@if (AgentFullName != "No Agent")
+						{
+							<button @onclick='() => AssignAgent(null,0)' class="remove__agent"><i class="fa-solid fa-xmark"></i></button>
+						}
+					</h3>
+					<div class="dropdown__wrapper">
+						<div class="showAgents">
+							Select Agent
+
+						</div>
+						<div class="agents_list">
+							@foreach (Agent agent in agents)
+							{
+								<div class="agent" @onclick='() => AssignAgent(agent.FullName,agent.id)'>
+									<span>@agent.FullName</span>
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+
+				<div class="closeTicket" @onclick='() => CloseTicket(Closed)'>
+					<h3><i class="fa-solid fa-lock"></i> Close Ticket</h3>
+					<button class="closeBtn">
+						@if (Closed)
+						{
+							<i class="fa-solid fa-lock-open"></i>
+						}
+						else
+						{
+							<i class="fa-solid fa-lock"></i>
+						}
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="dis" id="disable"></div>
+
+		<div class="send">
+			@if (Closed)
+			{
+				<h3 class="closedTicket">This Ticket is Closed</h3>
+			}
+			else
+			{
+				<div class="send__form">
+					<input type="text" class="text__input" placeholder="Message..." id="Message" @bind="Message">
+
+					<InputFile id="attachments" OnChange="HandleFileSelected" multiple style="display:none;" />
+
+					<label for="attachments" class="attachments__input"><i class="fa-solid fa-paperclip"></i></label>
+
+					<button class="send__button" type="submit" @onclick="SendMessage"><i class="fa-regular fa-paper-plane"></i></button>
+				</div>
+			}
+		</div>
+	</div>
+
+
+	@if (Viewer)
+	{
+		<div class="viewer">
+			<div class="dispage">
+				<div class="viewer__controls">
+					<button @onclick='() => OpenViewer("")'><i class="fa-solid fa-xmark"></i></button>
+				</div>
+				<div class="viewer__wrapper" @onclick='() => OpenViewer("")'>
+					<div class="viewer__content">
+						<img src="@Image">
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+
+
+
+	@if (NewActivity)
+	{
+		<div class="messageBox">
+			<div class="message__icon">
+				<img src="./Images/xmark.svg" width="30" height="30">
+			</div>
+			<div class="message__info">
+				<div class="message__title">
+					<h3>@MessageTitle</h3>
+				</div>
+				<div class="message__content">
+					<span>@MessageDescription</span>
+				</div>
+			</div>
+		</div>
+	}
+
+	<script>
+		function goToBottom() {
+			let cont = document.getElementById("chat");
+			cont.scrollTop = cont.scrollHeight + 10;
+		}
+
+		let side = document.getElementById("ticket__sidebar");
+		let disable = document.getElementById("disable")
+
+		function openSettings() {
+			side.classList.add("right");
+			disable.classList.add("show")
+		}
+
+		function closeSettings() {
+			side.classList.remove("right")
+			disable.classList.remove("show")
+		}
+	</script>
+</div>
