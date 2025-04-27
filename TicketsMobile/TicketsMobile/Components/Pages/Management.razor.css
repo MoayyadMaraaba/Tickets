@@ -1,0 +1,197 @@
+.management {
+    background-color: var(--BG-COLOR);
+    min-height: 100vh;
+}
+
+.Manage {
+    padding: 3rem;
+    width: 100%;
+}
+
+.section__title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--FONT-COLOR);
+    gap: 1rem;
+}
+
+.add__button {
+    min-width: 120px;
+    height: 40px;
+    background-color: var(--PRIMARY-COLOR);
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 300ms ease-in-out;
+}
+
+    .add__button:hover {
+        background-color: var(--HOVER-COLOR);
+        cursor: pointer;
+    }
+
+.mTypes,
+.mStatus {
+    margin-top: 2rem;
+}
+
+.Types,
+.Status {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.type,
+.status {
+    margin-top: 3rem;
+    min-width: 250px;
+    height: 80px;
+    background-color: var(--BG2-COLOR);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.266);
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    transition: all 300ms ease-in-out;
+    border-bottom: 3px solid var(--PRIMARY-COLOR);
+}
+
+    .type span,
+    .status span {
+        font-weight: bold;
+        color: #fff;
+    }
+
+.edit__button,
+.trash__button {
+    position: absolute;
+    top: -50px;
+    left: 60%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--PRIMARY-COLOR);
+    color: #fff;
+    transition: all 300ms ease-in-out;
+}
+
+    .edit__button:hover,
+    .trash__button:hover {
+        cursor: pointer;
+        background-color: var(--HOVER-COLOR);
+    }
+
+.trash__button {
+    left: 80%;
+}
+
+
+
+.popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    z-index: 5000;
+    transform: translate(-50%, -50%);
+}
+
+.dispage {
+    width: 100%;
+    height: 100vh;
+    background-color: #1f283398;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup__wrapper {
+    width: 350px;
+    min-height: 400px;
+    background-color: #1f2833;
+    border-radius: 10px;
+}
+
+.popup__form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__title {
+    font-weight: bold;
+    color: #eee;
+}
+
+.exit {
+    text-align: right;
+    width: 100%;
+    height: 50px;
+}
+
+.exit__button {
+    margin: 1rem;
+    background: none;
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    color: #eeeeee;
+    font-size: 24px;
+    transition: all 300ms ease-in-out;
+}
+
+    .exit__button:hover {
+        cursor: pointer;
+        color: var(--PRIMARY-COLOR);
+    }
+
+.text__input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 340px;
+    height: 40px;
+    color: #454444;
+    padding: 0 1rem;
+    border: 2px solid grey;
+    border-radius: 5px;
+    background-color: #eee;
+    transition: all 300ms ease-in-out;
+}
+
+    .text__input::placeholder {
+        color: #454444;
+    }
+
+.form__button {
+    width: 340px;
+    height: 40px;
+    background-color: var(--PRIMARY-COLOR);
+    transition: all 300ms ease-in-out;
+    border-radius: 5px;
+    color: #fff;
+}
+
+    .form__button:hover {
+        cursor: pointer;
+        background-color: var(--HOVER-COLOR);
+    }
+
+.error__class {
+    border: 2px solid var(--ERROR-COLOR);
+}
+
+.err {
+    display: flex;
+    color: var(--ERROR-COLOR);
+}

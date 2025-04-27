@@ -1,0 +1,4205 @@
+{
+  "Version": 1,
+  "Hash": "1lhW8fpt+eqrHi15LL2s+JreLUwa/83j9FYvMULCLH4=",
+  "Source": "TicketsMobile",
+  "BasePath": "/",
+  "Mode": "Root",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TicketsMobile\\wwwroot",
+      "Source": "TicketsMobile",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\14dhul66ek-fx95avtcoq.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "Images/envelope#[.{fingerprint=fx95avtcoq}]?.svg.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\envelope.svg",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "t7enhwe1m0",
+      "Integrity": "ufg/yhQh56Esuw6TN6MTuuKzsLrktvliEyctDOlHJB8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\envelope.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\2sdlkw952l-ovkjtg1050.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "Images/hero#[.{fingerprint=ovkjtg1050}]?.svg.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\hero.svg",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "yl01vf3ucb",
+      "Integrity": "VoT7D/ge/aI2kbNFqwlAToBVuwhgNklH9oa6ZGr27MI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\hero.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6exue7zrus-8inm30yfxf.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "css/bootstrap/bootstrap.min.css#[.{fingerprint=8inm30yfxf}]?.map.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "fbl5ivwo6k",
+      "Integrity": "Kym5HpgDYV8Caci50HDUPG6WCQ6nTP+8hy429w+zHVU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6l4lq1ysc4-6g4mbriwlo.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "Images/check#[.{fingerprint=6g4mbriwlo}]?.svg.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\check.svg",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "kouiveg89c",
+      "Integrity": "LB1XEO7s2Aao3tYA3BxMsUfyuFH3rdEhzRSR2VffKsc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\check.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\8a9ybrbips-6gzpyzhau4.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "css/bootstrap/bootstrap.min#[.{fingerprint=6gzpyzhau4}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "joqzyw7ssu",
+      "Integrity": "LTxu1aeZz5yJTTAB+DiLnn5XOMdK1oiypNP/4JaeK9c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ffhir06mxf-mgojgzwux5.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "Images/xmark#[.{fingerprint=mgojgzwux5}]?.svg.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\xmark.svg",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "1pm94t4ssy",
+      "Integrity": "28yO7gigZXSKkynFqkhUWxBz7nWKs28izvApRVJuwUM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\xmark.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\pgp7zn4pu5-dui18ne9wm.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "TicketsMobile#[.{fingerprint=dui18ne9wm}]!.bundle.scp.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\TicketsMobile.bundle.scp.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "gqw21uo5wk",
+      "Integrity": "yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\TicketsMobile.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ph6cznidn7-6hbtmlkssw.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "Images/plus#[.{fingerprint=6hbtmlkssw}]?.svg.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\plus.svg",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "tzpem91sb0",
+      "Integrity": "GSVXNFWa9/t+CnuKsmuAazq9BsPFaOJ4bLcWeb1tbFc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\plus.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\r8h4nbuxhx-6jrkjrjkdq.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "css/app#[.{fingerprint=6jrkjrjkdq}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\app.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "5y84h5nbwd",
+      "Integrity": "TRsHjCGbQ7tZlSzCpVPeozwcfOkhjcZeRe0Nt27tzys=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rpmj0ke26a-hcrowb7uy5.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "index#[.{fingerprint=hcrowb7uy5}]?.html.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\index.html",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "kw6ku7ayzr",
+      "Integrity": "DCbs3R5ykE/N8EMshwk+WrHvEJxhDB/Rhg1gmURdD1M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rxpuow2pjj-dui18ne9wm.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "TicketsMobile#[.{fingerprint=dui18ne9wm}]?.styles.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\TicketsMobile.styles.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "gqw21uo5wk",
+      "Integrity": "yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\TicketsMobile.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\yzvrpgcjiz-v8elyi9l00.gz",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\",
+      "BasePath": "/",
+      "RelativePath": "css/Styles#[.{fingerprint=v8elyi9l00}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\Styles.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "u0pe5utthv",
+      "Integrity": "0hzHFfLMdFKcbsqqeNzqL6vHSm7+9Ak+9thQ5px5340=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\Styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\TicketsMobile.styles.css",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\",
+      "BasePath": "/",
+      "RelativePath": "TicketsMobile#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "dui18ne9wm",
+      "Integrity": "pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\TicketsMobile.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\TicketsMobile.bundle.scp.css",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\",
+      "BasePath": "/",
+      "RelativePath": "TicketsMobile#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "dui18ne9wm",
+      "Integrity": "pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\TicketsMobile.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\app.css",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/app#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6jrkjrjkdq",
+      "Integrity": "nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/bootstrap/bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6gzpyzhau4",
+      "Integrity": "SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8inm30yfxf",
+      "Integrity": "gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\Styles.css",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "css/Styles#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "v8elyi9l00",
+      "Integrity": "oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\check.svg",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/check#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6g4mbriwlo",
+      "Integrity": "BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\check.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\envelope.svg",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/envelope#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fx95avtcoq",
+      "Integrity": "fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\envelope.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\hero.svg",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/hero#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ovkjtg1050",
+      "Integrity": "dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\hero.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\logo.png",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yz2r8r9olo",
+      "Integrity": "7itivO2Ao3J8sl2KUEKOPoMWwnl6zCLhOl6snzJqdtk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\plus.svg",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/plus#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6hbtmlkssw",
+      "Integrity": "ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\plus.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\xmark.svg",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/xmark#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mgojgzwux5",
+      "Integrity": "agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\xmark.svg"
+    },
+    {
+      "Identity": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\index.html",
+      "SourceId": "TicketsMobile",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hcrowb7uy5",
+      "Integrity": "cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/app.6jrkjrjkdq.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\r8h4nbuxhx-6jrkjrjkdq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000539374326"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1853"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TRsHjCGbQ7tZlSzCpVPeozwcfOkhjcZeRe0Nt27tzys=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:22:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6jrkjrjkdq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.6jrkjrjkdq.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3624"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:22:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6jrkjrjkdq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.6jrkjrjkdq.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\r8h4nbuxhx-6jrkjrjkdq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1853"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TRsHjCGbQ7tZlSzCpVPeozwcfOkhjcZeRe0Nt27tzys=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:22:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6jrkjrjkdq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TRsHjCGbQ7tZlSzCpVPeozwcfOkhjcZeRe0Nt27tzys="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\r8h4nbuxhx-6jrkjrjkdq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000539374326"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1853"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TRsHjCGbQ7tZlSzCpVPeozwcfOkhjcZeRe0Nt27tzys=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:22:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3624"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:22:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nsjqjHCdhoOXzRmC3p53vhF/8Vj5nUQO3VbMcxDWumg="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\r8h4nbuxhx-6jrkjrjkdq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1853"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TRsHjCGbQ7tZlSzCpVPeozwcfOkhjcZeRe0Nt27tzys=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:22:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TRsHjCGbQ7tZlSzCpVPeozwcfOkhjcZeRe0Nt27tzys="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.6gzpyzhau4.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\8a9ybrbips-6gzpyzhau4.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000041844506"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23897"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LTxu1aeZz5yJTTAB+DiLnn5XOMdK1oiypNP/4JaeK9c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6gzpyzhau4"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.6gzpyzhau4.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6gzpyzhau4"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.6gzpyzhau4.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\8a9ybrbips-6gzpyzhau4.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23897"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LTxu1aeZz5yJTTAB+DiLnn5XOMdK1oiypNP/4JaeK9c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6gzpyzhau4"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap/bootstrap.min.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LTxu1aeZz5yJTTAB+DiLnn5XOMdK1oiypNP/4JaeK9c="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\8a9ybrbips-6gzpyzhau4.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000041844506"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23897"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LTxu1aeZz5yJTTAB+DiLnn5XOMdK1oiypNP/4JaeK9c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7/p4nS6D/0="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css.8inm30yfxf.map",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6exue7zrus-8inm30yfxf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000013350065"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74905"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Kym5HpgDYV8Caci50HDUPG6WCQ6nTP+8hy429w+zHVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8inm30yfxf"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap/bootstrap.min.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css.8inm30yfxf.map",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8inm30yfxf"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap/bootstrap.min.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css.8inm30yfxf.map.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6exue7zrus-8inm30yfxf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74905"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Kym5HpgDYV8Caci50HDUPG6WCQ6nTP+8hy429w+zHVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8inm30yfxf"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap/bootstrap.min.css.map.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Kym5HpgDYV8Caci50HDUPG6WCQ6nTP+8hy429w+zHVU="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\8a9ybrbips-6gzpyzhau4.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23897"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LTxu1aeZz5yJTTAB+DiLnn5XOMdK1oiypNP/4JaeK9c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LTxu1aeZz5yJTTAB+DiLnn5XOMdK1oiypNP/4JaeK9c="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6exue7zrus-8inm30yfxf.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000013350065"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74905"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Kym5HpgDYV8Caci50HDUPG6WCQ6nTP+8hy429w+zHVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap/bootstrap.min.css.map.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6exue7zrus-8inm30yfxf.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74905"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Kym5HpgDYV8Caci50HDUPG6WCQ6nTP+8hy429w+zHVU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 04 Mar 2025 20:35:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Kym5HpgDYV8Caci50HDUPG6WCQ6nTP+8hy429w+zHVU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Styles.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\yzvrpgcjiz-v8elyi9l00.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000942507069"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1060"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0hzHFfLMdFKcbsqqeNzqL6vHSm7+9Ak+9thQ5px5340=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 12:38:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A="
+        }
+      ]
+    },
+    {
+      "Route": "css/Styles.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\Styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3885"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 12:38:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A="
+        }
+      ]
+    },
+    {
+      "Route": "css/Styles.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\yzvrpgcjiz-v8elyi9l00.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1060"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0hzHFfLMdFKcbsqqeNzqL6vHSm7+9Ak+9thQ5px5340=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 12:38:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0hzHFfLMdFKcbsqqeNzqL6vHSm7+9Ak+9thQ5px5340="
+        }
+      ]
+    },
+    {
+      "Route": "css/Styles.v8elyi9l00.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\yzvrpgcjiz-v8elyi9l00.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000942507069"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1060"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0hzHFfLMdFKcbsqqeNzqL6vHSm7+9Ak+9thQ5px5340=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 12:38:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v8elyi9l00"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A="
+        }
+      ]
+    },
+    {
+      "Route": "css/Styles.v8elyi9l00.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\Styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3885"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 12:38:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v8elyi9l00"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-oQoHarTCuuDP65fLgXELMs1R4wco1Xh4iOOZDWRuq6A="
+        }
+      ]
+    },
+    {
+      "Route": "css/Styles.v8elyi9l00.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\yzvrpgcjiz-v8elyi9l00.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1060"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0hzHFfLMdFKcbsqqeNzqL6vHSm7+9Ak+9thQ5px5340=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 12:38:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v8elyi9l00"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Styles.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0hzHFfLMdFKcbsqqeNzqL6vHSm7+9Ak+9thQ5px5340="
+        }
+      ]
+    },
+    {
+      "Route": "Images/check.6g4mbriwlo.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6l4lq1ysc4-6g4mbriwlo.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002487562189"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "401"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LB1XEO7s2Aao3tYA3BxMsUfyuFH3rdEhzRSR2VffKsc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 15:01:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6g4mbriwlo"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/check.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo="
+        }
+      ]
+    },
+    {
+      "Route": "Images/check.6g4mbriwlo.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\check.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 15:01:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6g4mbriwlo"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/check.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo="
+        }
+      ]
+    },
+    {
+      "Route": "Images/check.6g4mbriwlo.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6l4lq1ysc4-6g4mbriwlo.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "401"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LB1XEO7s2Aao3tYA3BxMsUfyuFH3rdEhzRSR2VffKsc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 15:01:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6g4mbriwlo"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/check.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LB1XEO7s2Aao3tYA3BxMsUfyuFH3rdEhzRSR2VffKsc="
+        }
+      ]
+    },
+    {
+      "Route": "Images/check.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6l4lq1ysc4-6g4mbriwlo.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002487562189"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "401"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LB1XEO7s2Aao3tYA3BxMsUfyuFH3rdEhzRSR2VffKsc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 15:01:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo="
+        }
+      ]
+    },
+    {
+      "Route": "Images/check.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\check.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 15:01:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BhcFZiKovj8qYCmNprS2qKnrq6gwGr++DwjGxN+bSRo="
+        }
+      ]
+    },
+    {
+      "Route": "Images/check.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\6l4lq1ysc4-6g4mbriwlo.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "401"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LB1XEO7s2Aao3tYA3BxMsUfyuFH3rdEhzRSR2VffKsc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Mar 2025 15:01:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LB1XEO7s2Aao3tYA3BxMsUfyuFH3rdEhzRSR2VffKsc="
+        }
+      ]
+    },
+    {
+      "Route": "Images/envelope.fx95avtcoq.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\14dhul66ek-fx95avtcoq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002710027100"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "368"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ufg/yhQh56Esuw6TN6MTuuKzsLrktvliEyctDOlHJB8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:28:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fx95avtcoq"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/envelope.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk="
+        }
+      ]
+    },
+    {
+      "Route": "Images/envelope.fx95avtcoq.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\envelope.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "520"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:28:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fx95avtcoq"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/envelope.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk="
+        }
+      ]
+    },
+    {
+      "Route": "Images/envelope.fx95avtcoq.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\14dhul66ek-fx95avtcoq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "368"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ufg/yhQh56Esuw6TN6MTuuKzsLrktvliEyctDOlHJB8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:28:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fx95avtcoq"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/envelope.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ufg/yhQh56Esuw6TN6MTuuKzsLrktvliEyctDOlHJB8="
+        }
+      ]
+    },
+    {
+      "Route": "Images/envelope.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\14dhul66ek-fx95avtcoq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.002710027100"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "368"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ufg/yhQh56Esuw6TN6MTuuKzsLrktvliEyctDOlHJB8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:28:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk="
+        }
+      ]
+    },
+    {
+      "Route": "Images/envelope.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\envelope.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "520"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:28:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fUiy+JG+zFzio1fsNu55elR2Dg04RNhfGK4917JZAlk="
+        }
+      ]
+    },
+    {
+      "Route": "Images/envelope.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\14dhul66ek-fx95avtcoq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "368"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ufg/yhQh56Esuw6TN6MTuuKzsLrktvliEyctDOlHJB8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:28:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ufg/yhQh56Esuw6TN6MTuuKzsLrktvliEyctDOlHJB8="
+        }
+      ]
+    },
+    {
+      "Route": "Images/hero.ovkjtg1050.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\2sdlkw952l-ovkjtg1050.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000175407823"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5700"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VoT7D/ge/aI2kbNFqwlAToBVuwhgNklH9oa6ZGr27MI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Mar 2025 18:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ovkjtg1050"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/hero.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o="
+        }
+      ]
+    },
+    {
+      "Route": "Images/hero.ovkjtg1050.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\hero.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19902"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Mar 2025 18:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ovkjtg1050"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/hero.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o="
+        }
+      ]
+    },
+    {
+      "Route": "Images/hero.ovkjtg1050.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\2sdlkw952l-ovkjtg1050.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5700"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VoT7D/ge/aI2kbNFqwlAToBVuwhgNklH9oa6ZGr27MI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Mar 2025 18:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ovkjtg1050"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/hero.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VoT7D/ge/aI2kbNFqwlAToBVuwhgNklH9oa6ZGr27MI="
+        }
+      ]
+    },
+    {
+      "Route": "Images/hero.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\2sdlkw952l-ovkjtg1050.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000175407823"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5700"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VoT7D/ge/aI2kbNFqwlAToBVuwhgNklH9oa6ZGr27MI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Mar 2025 18:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o="
+        }
+      ]
+    },
+    {
+      "Route": "Images/hero.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\hero.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19902"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Mar 2025 18:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dH0zxe/M6P5DNROXyHM4OG1gy6LtPM1qUiVXsD/at1o="
+        }
+      ]
+    },
+    {
+      "Route": "Images/hero.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\2sdlkw952l-ovkjtg1050.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5700"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VoT7D/ge/aI2kbNFqwlAToBVuwhgNklH9oa6ZGr27MI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Mar 2025 18:59:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VoT7D/ge/aI2kbNFqwlAToBVuwhgNklH9oa6ZGr27MI="
+        }
+      ]
+    },
+    {
+      "Route": "Images/logo.png",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59314"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7itivO2Ao3J8sl2KUEKOPoMWwnl6zCLhOl6snzJqdtk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Feb 2025 22:30:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7itivO2Ao3J8sl2KUEKOPoMWwnl6zCLhOl6snzJqdtk="
+        }
+      ]
+    },
+    {
+      "Route": "Images/logo.yz2r8r9olo.png",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "59314"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7itivO2Ao3J8sl2KUEKOPoMWwnl6zCLhOl6snzJqdtk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 13 Feb 2025 22:30:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yz2r8r9olo"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7itivO2Ao3J8sl2KUEKOPoMWwnl6zCLhOl6snzJqdtk="
+        }
+      ]
+    },
+    {
+      "Route": "Images/plus.6hbtmlkssw.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ph6cznidn7-6hbtmlkssw.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003802281369"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "262"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GSVXNFWa9/t+CnuKsmuAazq9BsPFaOJ4bLcWeb1tbFc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 14:25:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6hbtmlkssw"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/plus.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI="
+        }
+      ]
+    },
+    {
+      "Route": "Images/plus.6hbtmlkssw.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\plus.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "352"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 14:25:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6hbtmlkssw"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/plus.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI="
+        }
+      ]
+    },
+    {
+      "Route": "Images/plus.6hbtmlkssw.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ph6cznidn7-6hbtmlkssw.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "262"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GSVXNFWa9/t+CnuKsmuAazq9BsPFaOJ4bLcWeb1tbFc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 14:25:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6hbtmlkssw"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/plus.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GSVXNFWa9/t+CnuKsmuAazq9BsPFaOJ4bLcWeb1tbFc="
+        }
+      ]
+    },
+    {
+      "Route": "Images/plus.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ph6cznidn7-6hbtmlkssw.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.003802281369"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "262"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GSVXNFWa9/t+CnuKsmuAazq9BsPFaOJ4bLcWeb1tbFc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 14:25:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI="
+        }
+      ]
+    },
+    {
+      "Route": "Images/plus.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\plus.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "352"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 14:25:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ppYvxE5G2pHydd1wRShRxU5o+/Z9fxKU3zL4SSesrJI="
+        }
+      ]
+    },
+    {
+      "Route": "Images/plus.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ph6cznidn7-6hbtmlkssw.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "262"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GSVXNFWa9/t+CnuKsmuAazq9BsPFaOJ4bLcWeb1tbFc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 14:25:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GSVXNFWa9/t+CnuKsmuAazq9BsPFaOJ4bLcWeb1tbFc="
+        }
+      ]
+    },
+    {
+      "Route": "Images/xmark.mgojgzwux5.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ffhir06mxf-mgojgzwux5.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001984126984"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "503"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"28yO7gigZXSKkynFqkhUWxBz7nWKs28izvApRVJuwUM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:31:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mgojgzwux5"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/xmark.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E="
+        }
+      ]
+    },
+    {
+      "Route": "Images/xmark.mgojgzwux5.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\xmark.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1028"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:31:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mgojgzwux5"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/xmark.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E="
+        }
+      ]
+    },
+    {
+      "Route": "Images/xmark.mgojgzwux5.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ffhir06mxf-mgojgzwux5.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "503"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"28yO7gigZXSKkynFqkhUWxBz7nWKs28izvApRVJuwUM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:31:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mgojgzwux5"
+        },
+        {
+          "Name": "label",
+          "Value": "Images/xmark.svg.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-28yO7gigZXSKkynFqkhUWxBz7nWKs28izvApRVJuwUM="
+        }
+      ]
+    },
+    {
+      "Route": "Images/xmark.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ffhir06mxf-mgojgzwux5.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001984126984"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "503"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"28yO7gigZXSKkynFqkhUWxBz7nWKs28izvApRVJuwUM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:31:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E="
+        }
+      ]
+    },
+    {
+      "Route": "Images/xmark.svg",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\xmark.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1028"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:31:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-agHRFbQRPm+L5Y/9J30UEIqaSWP3WwvL60X7dXglO7E="
+        }
+      ]
+    },
+    {
+      "Route": "Images/xmark.svg.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\ffhir06mxf-mgojgzwux5.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "503"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"28yO7gigZXSKkynFqkhUWxBz7nWKs28izvApRVJuwUM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 11:31:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-28yO7gigZXSKkynFqkhUWxBz7nWKs28izvApRVJuwUM="
+        }
+      ]
+    },
+    {
+      "Route": "index.hcrowb7uy5.html",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rpmj0ke26a-hcrowb7uy5.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001204819277"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "829"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DCbs3R5ykE/N8EMshwk+WrHvEJxhDB/Rhg1gmURdD1M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:26:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hcrowb7uy5"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk="
+        }
+      ]
+    },
+    {
+      "Route": "index.hcrowb7uy5.html",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1882"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:26:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hcrowb7uy5"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk="
+        }
+      ]
+    },
+    {
+      "Route": "index.hcrowb7uy5.html.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rpmj0ke26a-hcrowb7uy5.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "829"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DCbs3R5ykE/N8EMshwk+WrHvEJxhDB/Rhg1gmURdD1M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:26:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hcrowb7uy5"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DCbs3R5ykE/N8EMshwk+WrHvEJxhDB/Rhg1gmURdD1M="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rpmj0ke26a-hcrowb7uy5.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001204819277"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "829"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DCbs3R5ykE/N8EMshwk+WrHvEJxhDB/Rhg1gmURdD1M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:26:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1882"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:26:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cbxFD/h0V6Ub/R0hX4JSfwf+nekbZhq1r3U9nm6jejk="
+        }
+      ]
+    },
+    {
+      "Route": "index.html.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rpmj0ke26a-hcrowb7uy5.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "829"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DCbs3R5ykE/N8EMshwk+WrHvEJxhDB/Rhg1gmURdD1M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:26:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DCbs3R5ykE/N8EMshwk+WrHvEJxhDB/Rhg1gmURdD1M="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.bundle.scp.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\pgp7zn4pu5-dui18ne9wm.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000148632580"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6727"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.bundle.scp.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\TicketsMobile.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46418"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\pgp7zn4pu5-dui18ne9wm.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6727"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.dui18ne9wm.bundle.scp.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\pgp7zn4pu5-dui18ne9wm.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000148632580"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6727"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dui18ne9wm"
+        },
+        {
+          "Name": "label",
+          "Value": "TicketsMobile.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.dui18ne9wm.bundle.scp.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\TicketsMobile.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46418"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dui18ne9wm"
+        },
+        {
+          "Name": "label",
+          "Value": "TicketsMobile.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.dui18ne9wm.bundle.scp.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\pgp7zn4pu5-dui18ne9wm.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6727"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dui18ne9wm"
+        },
+        {
+          "Name": "label",
+          "Value": "TicketsMobile.bundle.scp.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.dui18ne9wm.styles.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rxpuow2pjj-dui18ne9wm.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000148632580"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6727"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dui18ne9wm"
+        },
+        {
+          "Name": "label",
+          "Value": "TicketsMobile.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.dui18ne9wm.styles.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\TicketsMobile.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46418"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dui18ne9wm"
+        },
+        {
+          "Name": "label",
+          "Value": "TicketsMobile.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.dui18ne9wm.styles.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rxpuow2pjj-dui18ne9wm.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6727"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dui18ne9wm"
+        },
+        {
+          "Name": "label",
+          "Value": "TicketsMobile.styles.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.styles.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rxpuow2pjj-dui18ne9wm.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000148632580"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6727"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.styles.css",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\TicketsMobile.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46418"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pfk9E6/4tJJvsgfHd5HdjMPhLVKhSSG53mUFgVOkXb8="
+        }
+      ]
+    },
+    {
+      "Route": "TicketsMobile.styles.css.gz",
+      "AssetFile": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\compressed\\rxpuow2pjj-dui18ne9wm.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6727"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 04 Apr 2025 15:27:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yFS0jf6dYOKHp5b7RCAmfw8fYWidTPa7E80gKI4jDUY="
+        }
+      ]
+    }
+  ]
+}

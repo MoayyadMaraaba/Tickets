@@ -1,0 +1,416 @@
+﻿@page "/Management";
+
+@using TicketsMobile.Components.Layout;
+@using TicketsMobile.API;
+@using TicketsMobile.Models;
+@using Type = TicketsMobile.Models.Type;
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject IJSRuntime JSRuntime
+
+@code {
+	private Fetch fetch = new Fetch();
+
+	// Load From API
+	private List<Status> statuses = new List<Status>();
+	private List<Type> types = new List<Type>();
+
+	// UI Variables
+	private bool ShowPopup = false;
+	private bool ShowTypeManagement = false;
+	private bool ShowStatusManagement = false;
+	private string TypeOperation = string.Empty;
+
+	// Type Management
+	private int TypeID = 0;
+	private string TypeNameEN = string.Empty;
+	private string TypeNameAR = string.Empty;
+
+	// Status Management
+	private int StatusID = 0;
+	private string StatusNameEN = string.Empty;
+	private string StatusNameAR = string.Empty;
+
+
+	protected override async Task OnInitializedAsync()
+	{
+		// Load Statuses
+		statuses = await fetch.GetStatus();
+
+		// Load Types
+		types = await fetch.GetTypes();
+	}
+
+	private void ShowAdd(string type)
+	{
+		if (type == "type")
+		{
+			if (ShowTypeManagement)
+			{
+				ShowPopup = false;
+				ShowTypeManagement = false;
+			}
+			else
+			{
+				TypeOperation = "Add";
+				ShowPopup = true;
+				ShowTypeManagement = true;
+			}
+		}
+		else if (type == "Status")
+		{
+			if (ShowStatusManagement)
+			{
+				ShowPopup = false;
+				ShowStatusManagement = false;
+			}
+			else
+			{
+				TypeOperation = "Add";
+				ShowPopup = true;
+				ShowStatusManagement = true;
+			}
+		}
+		else if (type == "Close")
+		{
+			this.ShowPopup = false;
+			this.ShowTypeManagement = false;
+			this.ShowStatusManagement = false;
+			TypeNameEN = string.Empty;
+			TypeNameAR = string.Empty;
+			StatusNameEN = string.Empty;
+			StatusNameAR = string.Empty;
+		}
+
+		StateHasChanged();
+	}
+
+	private void ShowEdit(string type, dynamic data)
+	{
+		if (type == "type")
+		{
+			if (ShowTypeManagement)
+			{
+				ShowPopup = false;
+				ShowTypeManagement = false;
+			}
+			else
+			{
+				TypeOperation = "Edit";
+				TypeID = data.ID;
+				TypeNameEN = data.NameEN;
+				TypeNameAR = data.NameAR;
+				ShowPopup = true;
+				ShowTypeManagement = true;
+			}
+		}
+		else if (type == "Status")
+		{
+			if (ShowStatusManagement)
+			{
+				ShowPopup = false;
+				ShowStatusManagement = false;
+			}
+			else
+			{
+				TypeOperation = "Edit";
+				StatusID = data.ID;
+				StatusNameEN = data.NameEN;
+				StatusNameAR = data.NameAR;
+				ShowPopup = true;
+				ShowStatusManagement = true;
+			}
+		}
+	}
+
+	private async void ManageType(string TypeOperation)
+	{
+		int errors = 0;
+
+		if (string.IsNullOrWhiteSpace(TypeNameEN))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "TypeNameEN", "Please Fill this field");
+			errors++;
+		}
+
+		if (string.IsNullOrEmpty(TypeNameAR))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "TypeNameAR", "Please Fill this field");
+			errors++;
+		}
+
+		if (errors == 0)
+		{
+			var token = await localStorage.GetItemAsync<string>("token");
+			Dictionary<string, string> headers = new Dictionary<string, string>
+			{
+				{"authorization", token}
+			};
+
+			string endpoint = TypeOperation == "Add" ? "api/Types/Add" : $"api/Types/Update/{TypeID}";
+
+			Dictionary<string, object> body = new Dictionary<string, object>
+			{
+				{"NameEN", TypeNameEN},
+				{"NameAR",TypeNameAR}
+			};
+
+			dynamic method = RestSharp.Method.Post;
+
+			if (TypeOperation == "Add")
+			{
+				method = RestSharp.Method.Post;
+			} else if(TypeOperation == "Edit")
+			{
+				method = RestSharp.Method.Patch;
+			}
+
+			Dictionary<string, object> res = await fetch.GetData(endpoint, body, null, null, headers, method);
+
+			int StatusCode = (int)res["StatusCode"];
+
+			if(StatusCode == 200 || StatusCode == 201)
+			{
+				TypeNameEN = "";
+				TypeNameAR = "";
+				ShowPopup = false;
+				ShowTypeManagement = false;
+				types = await fetch.GetTypes();
+				StateHasChanged();
+			}
+		}
+	}
+
+	private async void ManageStatus(string TypeOperation)
+	{
+		int errors = 0;
+
+		if (string.IsNullOrWhiteSpace(StatusNameEN))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "StatusNameEN", "Please Fill this field");
+			errors++;
+		}
+
+		if (string.IsNullOrEmpty(StatusNameAR))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "StatusNameAR", "Please Fill this field");
+			errors++;
+		}
+
+		if (errors == 0)
+		{
+			var token = await localStorage.GetItemAsync<string>("token");
+			Dictionary<string, string> headers = new Dictionary<string, string>
+			{
+				{"authorization", token}
+			};
+
+			string endpoint = TypeOperation == "Add" ? "api/Status/Add" : $"api/Status/Update/{StatusID}";
+
+			Dictionary<string, object> body = new Dictionary<string, object>
+			{
+				{"NameEN", StatusNameEN},
+				{"NameAR",StatusNameAR}
+			};
+
+			dynamic method = RestSharp.Method.Post;
+
+			if (TypeOperation == "Add")
+			{
+				method = RestSharp.Method.Post;
+			}
+			else if (TypeOperation == "Edit")
+			{
+				method = RestSharp.Method.Patch;
+			}
+
+			Dictionary<string, object> res = await fetch.GetData(endpoint, body, null, null, headers, method);
+
+			int StatusCode = (int)res["StatusCode"];
+
+			if (StatusCode == 200 || StatusCode == 201)
+			{
+				StatusNameEN = "";
+				StatusNameAR = "";
+				ShowPopup = false;
+				ShowStatusManagement = false;
+				statuses = await fetch.GetStatus();
+				StateHasChanged();
+			}
+		}
+	}
+
+	private async void Delete(string endpoint, dynamic TS)
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		var response = await fetch.GetData($"api/{endpoint}/Delete/{TS.ID}", null, null, null, headers, RestSharp.Method.Delete);
+		int StatusCode = (int)response["StatusCode"];
+
+		if (StatusCode == 200)
+		{
+			if (endpoint == "Types")
+			{
+				types.Remove(TS);
+			}
+			else if (endpoint == "Status")
+			{
+				statuses.Remove(TS);
+			}
+			StateHasChanged();
+		}
+	}
+
+}
+
+<div class="management">
+	<Sidebar />
+	<!--======= Management =======-->
+	<section class="Manage">
+		<h2 class="section__title">Manage</h2>
+
+		<!--======= Displaying Types =======-->
+		<div class="mTypes">
+			<h2 class="section__title">
+				Types
+				<button class="add__button" @onclick='() => ShowAdd("type")'>Add <i class="fa-solid fa-plus"></i></button>
+			</h2>
+			<div class="Types">
+				@foreach (Type type in types)
+				{
+					<div class="type">
+						<span>@type.NameEN</span>
+						<button class="edit__button" @onclick='() => ShowEdit("type", type)'><i class="fa-regular fa-pen-to-square"></i></button>
+						<button class="trash__button" @onclick='() => Delete("Types", type)'><i class="fa-solid fa-trash"></i></button>
+					</div>
+				}
+			</div>
+		</div>
+
+		<!--======= Displaying Status =======-->
+		<div class="mStatus">
+			<h2 class="section__title">
+				Statuses
+				<button class="add__button" @onclick='() => ShowAdd("Status")'>Add <i class="fa-solid fa-plus"></i></button>
+			</h2>
+			<div class="Status">
+				@foreach (Status status in statuses)
+				{
+					<div class="status">
+						<span>@status.NameEN</span>
+						<button class="edit__button" @onclick='() => ShowEdit("Status", status)'><i class="fa-regular fa-pen-to-square"></i></button>
+						<button class="trash__button" @onclick='() => Delete("Status", status)'><i class="fa-solid fa-trash"></i></button>
+					</div>
+				}
+			</div>
+		</div>
+	</section>
+
+	<!--======= Popup =======-->
+	@if (ShowPopup)
+	{
+		<div class="popup">
+			<div class="dispage">
+				<div class="popup__wrapper">
+					<!--======= popup controls =======-->
+					<div class="exit">
+						<button class="exit__button" @onclick='() => ShowAdd("Close")'><i class="fa-solid fa-xmark"></i></button>
+					</div>
+
+					<!--======= Manage Type =======-->
+					@if (ShowTypeManagement)
+					{
+						<form @onsubmit="() => ManageType(TypeOperation)" method="post" class="popup__form">
+							<!--======= form title =======-->
+							<h2 class="form__title">@TypeOperation</h2>
+
+							<!--======= Type Name EN =======-->
+							<div class="input">
+								<input type="text" autocomplete="off" @bind="TypeNameEN" class="text__input" id="TypeNameEN" placeholder="Type Name EN" />
+								<br>
+								<label for="TypeNameEN" class="err TypeNameEN"></label>
+							</div>
+
+							<!--======= Type Name AR =======-->
+							<div class="input">
+								<input type="text" autocomplete="off" @bind="TypeNameAR" class="text__input" id="TypeNameAR" placeholder="Type Name AR" />
+								<br>
+								<label for="TypeNameAR" class="err TypeNameAR"></label>
+							</div>
+
+							<!--======= Submit Button =======-->
+							<div class="input">
+								<button class="form__button">
+									<span class="form__title">@TypeOperation</span>
+								</button>
+							</div>
+						</form>
+					}
+
+					<!--======= Manage Status =======-->
+					@if (ShowStatusManagement)
+					{
+						<form @onsubmit="() => ManageStatus(TypeOperation)" method="post" class="popup__form">
+							<!--======= form title =======-->
+							<h1 class="form__title">@TypeOperation</h1>
+
+							<!--======= Status Name EN =======-->
+							<div class="input">
+								<input type="text" autocomplete="off" @bind="StatusNameEN" class="text__input" id="StatusNameEN" placeholder="Status Name EN" />
+								<br>
+								<label for="StatusNameEN" class="err StatusNameEN"></label>
+							</div>
+
+							<!--======= Status Name AR =======-->
+							<div class="input">
+								<input type="text" autocomplete="off" @bind="StatusNameAR" class="text__input" id="StatusNameAR" placeholder="Status Name AR" />
+								<br>
+								<label for="StatusNameAR" class="err StatusNameAR"></label>
+							</div>
+
+							<!--======= Submit Button =======-->
+							<div class="input">
+								<button class="form__button">
+									<span class="form__title">@TypeOperation</span>
+								</button>
+							</div>
+						</form>
+					}
+				</div>
+			</div>
+		</div>
+		<script>
+			$("#TypeNameEN").on("focus", function () {
+				$(".TypeNameEN").text("");
+				$(this).removeClass("error__class");
+			});
+
+			$("#TypeNameEN").blur(function () {
+				$(this).removeClass("error__class");
+			});
+
+			$("#TypeNameAR").on("focus", function () {
+				$(".TypeNameAR").text("");
+				$(this).removeClass("error__class");
+			});
+
+			$("#TypeNameAR").blur(function () {
+				$(this).removeClass("error__class");
+			});
+		</script>
+	}
+
+	<script>
+		function fillError(element, message) {
+			$(`#${element}`).addClass("error__class");
+			$(`.${element}`).text(message);
+		}
+	</script>
+</div>
+
+
+

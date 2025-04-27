@@ -1,0 +1,284 @@
+﻿@page "/SendTicket"
+@using TicketsMobile.Components.Layout;
+@using Type = TicketsMobile.Models.Type;
+@using TicketsMobile.API;
+@using System.Timers;
+
+@inject IJSRuntime JSRuntime
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject NavigationManager Navigation;
+
+@code {
+	// Helper Classes
+	private Fetch fetch = new Fetch();
+	private Timer timer = new Timer(4000);
+
+	// Form Data
+	private string Subject = string.Empty;
+	private string Message = string.Empty;
+	private Type Type = new Type();
+	private List<IBrowserFile> SelectedFiles = new List<IBrowserFile>();
+
+	// Loaded Data
+	private List<Type> Types = new List<Type>();
+
+	// UI Variables
+	private bool DropdownOpen = false;
+	private bool NewActivity = false;
+	private string MessageTitle = string.Empty;
+	private string MessageDescription = string.Empty;
+
+	protected override async Task OnInitializedAsync()
+	{
+		this.Types = await fetch.GetTypes();
+	}
+
+	private void SelectType(Type type)
+	{
+		this.Type = type;
+		OpenDropdown();
+	}
+
+	private void OpenDropdown()
+	{
+		if (DropdownOpen)
+		{
+			DropdownOpen = false;
+		}
+		else
+		{
+			DropdownOpen = true;
+		}
+		StateHasChanged();
+	}
+
+	private void HandleFileSelected(InputFileChangeEventArgs e)
+	{
+		var files = e.GetMultipleFiles();
+		SelectedFiles.Clear();
+
+		if (files.Count > 4)
+		{
+			timer.Elapsed += OnTimedEvent;
+			timer.Start();
+			MessageBox("Attachments", "Only 4 Images allowed");
+		}
+
+		foreach (var file in files)
+		{
+			if (!file.ContentType.StartsWith("image"))
+			{
+				timer.Elapsed += OnTimedEvent;
+				timer.Start();
+				MessageBox("Error Uploading", "File type is not allowed");
+				break;
+			}
+			if (SelectedFiles.Count <= 3)
+			{
+				SelectedFiles.Add(file);
+			}
+		}
+	}
+
+	private void OnTimedEvent(object source, ElapsedEventArgs e)
+	{
+		this.NewActivity = false;
+		this.MessageTitle = "";
+		this.MessageDescription = "";
+		InvokeAsync(StateHasChanged);
+		timer.Stop();
+	}
+
+	private void MessageBox(string MessageTitle, string MessageDescription)
+	{
+		this.NewActivity = true;
+		this.MessageTitle = MessageTitle;
+		this.MessageDescription = MessageDescription;
+	}
+
+	private void RemoveImage(IBrowserFile image)
+	{
+		SelectedFiles.Remove(image);
+		StateHasChanged();
+	}
+
+	private async void Send()
+	{
+		int errors = 0;
+		if(string.IsNullOrWhiteSpace(Subject))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "Subject", "Please Fill this field");
+			errors++;
+		}
+
+		if(string.IsNullOrWhiteSpace(Message))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "Message", "Please Fill this field");
+			errors++;
+		}
+
+		if(Type.ID == 0)
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "types", "Please Select a type");
+			errors++;
+		}
+
+		if(errors == 0)
+		{
+			var token = await localStorage.GetItemAsync<string>("token");
+
+			Dictionary<string, string> headers = new Dictionary<string, string>
+			{
+				{"authorization", token}
+			};
+
+			Dictionary<string, object> body = new Dictionary<string, object>
+			{
+				{"Subject", Subject},
+				{"Status", 0},
+				{"Type", Type.ID},
+				{"AgentID", 0},
+				{"Priority", "Low"},
+				{"Closed", 0},
+				{"message", Message}
+			};
+
+			var response = await fetch.GetData("api/Tickets/Create", body, "Attachment", SelectedFiles, headers, RestSharp.Method.Post);
+			int StatusCode = (int)response["StatusCode"];
+
+			if(StatusCode == 201)
+			{
+				Navigation.NavigateTo("/Dashboard");
+			}
+		}
+	}
+
+
+}
+
+<div class="sendTicket">
+	<Sidebar />
+	<div class="form">
+		<h2 class="section__title">Send Ticket</h2>
+		<!--======== Subject ========-->
+		<div class="input">
+			<h3 class="input__title">Subject</h3>
+			<input type="text" name="Subject" class="text__input" placeholder="Subject" id="Subject" @bind="Subject">
+			<label for="Subject" class="input__error Subject"></label>
+		</div>
+
+		<!--======== Message ========-->
+		<div class="input">
+			<h3 class="input__title">Message</h3>
+			<textarea id="Message" class="textarea__input" placeholder="Message" @bind="Message"></textarea>
+			<label for="Message" class="input__error Message"></label>
+		</div>
+
+
+		<!--======== Types ========-->
+		<div class="input">
+			<h3 class="input__title">Type</h3>
+			<div class="dropdown__wrapper">
+				<div class="showTypes" @onclick="OpenDropdown" id="types">
+					Select Type : @Type.NameEN
+				</div>
+				@if (DropdownOpen)
+				{
+					<div class="types_list">
+						@foreach (Type type in Types)
+						{
+							<div class="type" @onclick="() => SelectType(type)">
+								<span>@type.NameEN</span>
+							</div>
+						}
+					</div>
+				}
+			</div>
+			<label class="input__error types"></label>
+		</div>
+
+		<!--======== File Input ========-->
+		<div class="input">
+			<h3 class="input__title">Attachments</h3>
+			<InputFile id="attachments" OnChange="HandleFileSelected" multiple style="display:none;" />
+			<label for="attachments" class="file__input"><i class="fa-solid fa-plus"></i> Attachments</label>
+		</div>
+
+		<!--======== Display Files ========-->
+		<div class="input">
+			<div class="files">
+				@foreach (var file in SelectedFiles)
+				{
+					<div class="file">
+						<div class="icon">
+							<button class="remove__button" @onclick='() => RemoveImage(file)'>
+								<i class="fa-solid fa-trash"></i>
+							</button>
+							<i class="fa-regular fa-image"></i>
+						</div>
+						<div class="filename">
+							@file.Name
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+
+		<div class="input">
+			<button class="submit__button" type="submit" @onclick="Send">Send</button>
+		</div>
+
+	</div>
+
+	@if (NewActivity)
+	{
+		<div class="messageBox">
+			<div class="message__icon">
+				<img src="./Images/xmark.svg" width="30" height="30">
+			</div>
+			<div class="message__info">
+				<div class="message__title">
+					<h3>@MessageTitle</h3>
+				</div>
+				<div class="message__content">
+					<span>@MessageDescription</span>
+				</div>
+			</div>
+		</div>
+	}
+
+	<script>
+		/************* Subject Input *************/
+		$("#Subject").on("focus", function () {
+			$(".Subject").text("");
+			$(this).removeClass("error__class");
+		});
+
+		$("#Subject").blur(function () {
+			$(this).removeClass("error__class");
+		});
+		/************* Subject Input *************/
+
+
+		/************* Message Input *************/
+		$("#Message").on("focus", function () {
+			$(".Message").text("");
+			$(this).removeClass("error__class");
+		});
+
+		$("#Message").blur(function () {
+			$(this).removeClass("error__class");
+		});
+		/************* Message Input *************/
+
+		$("#types").click(function() {
+			$(this).removeClass("error__class");
+			$(".types").text("");
+		});
+
+		function fillError(element, message) {
+			$(`#${element}`).addClass("error__class");
+			$(`.${element}`).text(message);
+		}
+	</script>
+</div>

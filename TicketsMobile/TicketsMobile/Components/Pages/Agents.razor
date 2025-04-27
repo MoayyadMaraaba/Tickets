@@ -1,0 +1,601 @@
+﻿@page "/Agents"
+
+@using TicketsMobile.Components.Layout;
+@using TicketsMobile.API;
+@using TicketsMobile.Models;
+@using System.Timers;
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject IJSRuntime JSRuntime
+
+@code {
+	// Helper Classes
+	private Fetch fetch = new Fetch();
+	private Timer timer = new Timer(4000);
+
+	// Loaded Data
+	private List<Agent> agents = new List<Agent>();
+
+	// UI Variables
+	private bool NewActivity = false;
+	private string MessageTitle = string.Empty;
+	private string MessageDescription = string.Empty;
+	private bool ShowPopup = false;
+	private bool ShowAgentManagement = false;
+	private string TypeOperation = "";
+	private bool IsDropDownOpen = false;
+
+	// Form Data
+	Dictionary<string, object> body = new Dictionary<string, object>();
+	private int id = 0;
+	private string FullName = string.Empty;
+	private string Email = string.Empty;
+	private string Password = string.Empty;
+	private string PhoneNumber = string.Empty;
+	private string Role = string.Empty;
+	private bool Activation = false;
+	private string active = string.Empty;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var token = await localStorage.GetItemAsync<string>("token");
+
+		// Load Agents
+		agents = await fetch.GetAgents(token);
+	}
+
+	private void ShowAdd(string type)
+	{
+		if (type == "Add")
+		{
+			if (this.ShowAgentManagement)
+			{
+				this.ShowPopup = false;
+				this.ShowAgentManagement = false;
+			}
+			else
+			{
+				this.TypeOperation = "Add";
+				this.ShowPopup = true;
+				this.ShowAgentManagement = true;
+			}
+		}
+		else if (type == "Close")
+		{
+			this.ShowPopup = false;
+			this.TypeOperation = "";
+			this.ShowAgentManagement = false;
+			this.body = new Dictionary<string, object>();
+			this.FullName = "";
+			this.Email = "";
+			this.Password = "";
+			this.PhoneNumber = "";
+			this.Role = "";
+			this.Activation = false;
+		}
+	}
+
+	private async void ShowEdit(Agent data)
+	{
+		if (this.ShowAgentManagement)
+		{
+			this.ShowPopup = false;
+			this.ShowAgentManagement = false;
+		}
+		else
+		{
+			this.TypeOperation = "Edit";
+			this.ShowPopup = true;
+			this.ShowAgentManagement = true;
+			this.id = data.id;
+			this.FullName = data.FullName;
+			this.Email = data.Email;
+			this.PhoneNumber = data.PhoneNumber;
+			this.Activation = data.Activation;
+			this.Role = data.Role;
+
+			if (this.Activation)
+			{
+				active = "back";
+			}
+			else
+			{
+				active = "";
+			}
+		}
+	}
+
+	private void OnTimedEvent(object source, ElapsedEventArgs e)
+	{
+		this.NewActivity = false;
+		this.MessageTitle = "";
+		this.MessageDescription = "";
+		InvokeAsync(StateHasChanged);
+		timer.Stop();
+	}
+
+	private void MessageBox(string MessageTitle, string MessageDescription)
+	{
+		this.NewActivity = true;
+		this.MessageTitle = MessageTitle;
+		this.MessageDescription = MessageDescription;
+	}
+
+	private void OpenDropdown()
+	{
+		if (this.IsDropDownOpen)
+		{
+			this.IsDropDownOpen = false;
+		}
+		else
+		{
+			this.IsDropDownOpen = true;
+		}
+		StateHasChanged();
+	}
+
+	private void SelectRole(string Role)
+	{
+		this.Role = Role;
+		if (body.ContainsKey("Role"))
+		{
+			body.Remove("Role");
+		}
+		body.Add("Role", this.Role);
+		OpenDropdown();
+	}
+
+	private async void activate()
+	{
+		this.Activation = !this.Activation;
+		if (body.ContainsKey("Activation"))
+		{
+			body.Remove("Activation");
+		}
+		body.Add("Activation", this.Activation);
+		await JSRuntime.InvokeVoidAsync("activate");
+	}
+
+	private void OnChange(string key, string value)
+	{
+		if (body.ContainsKey(key))
+		{
+			body.Remove(key);
+			body.Add(key, value);
+		}
+		else
+		{
+			body.Add(key, value);
+		}
+		StateHasChanged();
+	}
+
+	// Handle Inputs
+	private void OnFullNameChanged(ChangeEventArgs e)
+	{
+		FullName = e.Value.ToString();
+		OnChange("FullName", FullName);
+	}
+
+	private void OnEmailChanged(ChangeEventArgs e)
+	{
+		Email = e.Value.ToString();
+		OnChange("Email", Email);
+	}
+
+	private void OnPasswordChanged(ChangeEventArgs e)
+	{
+		Password = e.Value.ToString();
+		OnChange("Password", Password);
+	}
+
+	private void OnPhoneNumberChanged(ChangeEventArgs e)
+	{
+		PhoneNumber = e.Value.ToString();
+		OnChange("PhoneNumber", PhoneNumber);
+	}
+
+
+	private void ManageAgent(string type)
+	{
+		if (type == "Add")
+		{
+			AddAgent();
+		}
+		else if (type == "Edit")
+		{
+			UpdateAgent();
+		}
+
+	}
+
+	private async void AddAgent()
+	{
+		int errors = 0;
+
+		if (string.IsNullOrWhiteSpace(FullName))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "FullName", "Please Enter this filed");
+			errors++;
+		}
+
+		if (string.IsNullOrWhiteSpace(Email))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "Email", "Please Enter this filed");
+			errors++;
+		}
+
+		if (string.IsNullOrWhiteSpace(Password))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "Password", "Please Enter this filed");
+			errors++;
+		}
+
+		if (string.IsNullOrWhiteSpace(PhoneNumber))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "PhoneNumber", "Please Enter this filed");
+			errors++;
+		}
+
+		if (string.IsNullOrWhiteSpace(Role))
+		{
+			await JSRuntime.InvokeVoidAsync("role");
+			errors++;
+		}
+
+		if (errors == 0)
+		{
+			var token = await localStorage.GetItemAsync<string>("token");
+
+			Dictionary<string, string> headers = new Dictionary<string, string>
+			{
+				{"authorization", token}
+			};
+
+			var response = await fetch.GetData("api/Agents/Add", body, null, null, headers, RestSharp.Method.Post);
+			int StatusCode = (int)response["StatusCode"];
+			Dictionary<string, object> data = (Dictionary<string, object>)response["Data"];
+
+			if (StatusCode == 201)
+			{
+				ShowAdd("Close");
+				timer.Elapsed += OnTimedEvent;
+				timer.Start();
+				MessageBox("Success", "Agent Created");
+				agents = await fetch.GetAgents(token);
+
+				StateHasChanged();
+			}
+
+			if (StatusCode == 400)
+			{
+				string message = data["err"].ToString();
+				if (message == "Email already exists")
+				{
+					await JSRuntime.InvokeVoidAsync("fillError", "Email", message);
+				}
+				if (message == "Phone already exists")
+				{
+					await JSRuntime.InvokeVoidAsync("fillError", "PhoneNumber", message);
+				}
+			}
+		}
+	}
+
+	private async void UpdateAgent()
+	{
+		int errors = 0;
+
+		body.Add("id", id);
+
+		if (string.IsNullOrWhiteSpace(FullName))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "FullName", "Please Enter this filed");
+			errors++;
+		}
+
+		if (string.IsNullOrWhiteSpace(Email))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "Email", "Please Enter this filed");
+			errors++;
+		}
+
+		if (body.ContainsKey("Password"))
+		{
+			if (string.IsNullOrWhiteSpace(Password))
+			{
+				await JSRuntime.InvokeVoidAsync("fillError", "Password", "Please Enter this filed");
+				errors++;
+			}
+		}
+
+		if (string.IsNullOrWhiteSpace(PhoneNumber))
+		{
+			await JSRuntime.InvokeVoidAsync("fillError", "PhoneNumber", "Please Enter this filed");
+			errors++;
+		}
+
+		if (string.IsNullOrWhiteSpace(Role))
+		{
+			await JSRuntime.InvokeVoidAsync("role");
+			errors++;
+		}
+
+		bool isAnythingChanged = true;
+		if (body.Count == 1)
+		{
+			isAnythingChanged = false;
+		}
+
+		if(errors == 0 && isAnythingChanged)
+		{
+			var token = await localStorage.GetItemAsync<string>("token");
+			Dictionary<string, string> headers = new Dictionary<string, string>
+			{
+				{"authorization", token}
+			};
+
+			var response = await fetch.GetData("api/Agents/Update", body, null, null, headers, RestSharp.Method.Patch);
+			int StatusCode = (int)response["StatusCode"];
+			Dictionary<string, object> data = (Dictionary<string, object>)response["Data"];
+
+			if(StatusCode == 200) 
+			{
+				ShowAdd("Close");
+				timer.Elapsed += OnTimedEvent;
+				timer.Start();
+				MessageBox("Success", "Agent Updated");
+				agents = await fetch.GetAgents(token);
+
+				StateHasChanged();
+			}
+
+			if(StatusCode == 400)
+			{
+				string message = data["err"].ToString();
+				if (message == "Email already exists")
+				{
+					await JSRuntime.InvokeVoidAsync("fillError", "Email", message);
+				}
+				if (message == "Phone already exists")
+				{
+					await JSRuntime.InvokeVoidAsync("fillError", "PhoneNumber", message);
+				}
+			}
+
+		}
+
+	}
+
+	private async void Deactivate(int UserID, bool activation) {
+		var token = await localStorage.GetItemAsync<string>("token");
+		Dictionary<string, string> headers = new Dictionary<string, string>
+		{
+			{"authorization", token}
+		};
+
+		Dictionary<string, object> bo = new Dictionary<string, object> 
+		{
+			{"id", UserID},
+			{"Activation", activation}
+		};
+		var response = await fetch.GetData("api/Agents/Deactivate", bo, null, null, headers, RestSharp.Method.Patch);
+
+		int StatusCode = (int)response["StatusCode"];
+
+		if(StatusCode == 200)
+		{
+			timer.Elapsed += OnTimedEvent;
+			timer.Start();
+			MessageBox("Success", "Agent Updated");
+			agents = await fetch.GetAgents(token);
+
+			StateHasChanged();
+		}
+	}
+}
+
+<div class="AgentView">
+	<Sidebar />
+	<div class="Manage">
+		<!--======= Manage Title =======-->
+		<h2 class="section__title">
+			Manage Agents <button class="addBtn" @onclick='() => ShowAdd("Add")'>Add</button>
+		</h2>
+
+		<!--======= Agents =======-->
+		<div class="mAgents">
+			<div class="Agents">
+				@foreach (Agent agent in agents)
+				{
+					<div class="agent">
+						<span>@agent.FullName | Role : @agent.Role </span>
+						<button class="edit__button" @onclick='() => ShowEdit(agent)'>
+							<i class="fa-regular fa-pen-to-square"></i>
+						</button>
+
+						<button class="trash__button" @onclick='() => Deactivate(agent.id, agent.Activation)'>
+							@if (agent.Activation)
+							{
+								<i class="fa-solid fa-user-lock" v-if=""></i>
+							}
+							else
+							{
+								<i class="fa-solid fa-user-check" v-else></i>
+							}
+						</button>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+
+	@if (ShowPopup)
+	{
+		<div class="popup">
+			<div class="dispage">
+				<div class="popup__wrapper">
+					<!--======= popup controls =======-->
+					<div class="exit">
+						<button class="exit__button" @onclick='() => ShowAdd("Close")'>
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+					</div>
+
+					<div class="popup__form">
+						<!--======= form title =======-->
+						<h2 class="form__title">@TypeOperation</h2>
+
+						<!--======= FullName =======-->
+						<div class="input">
+							<input type="text" autocomplete="off" class="text__input"
+								   name="FullName" id="FullName" placeholder="FullName"
+								   @oninput='OnFullNameChanged' value="@FullName" />
+							<br>
+							<label for="FullName" class="err FullName"></label>
+						</div>
+
+
+						<!--======= Email =======-->
+						<div class="input">
+							<input type="text" autocomplete="off" class="text__input" name="Email"
+								   id="Email" placeholder="Email" @oninput='OnEmailChanged' value="@Email" />
+							<br>
+							<label for="Email" class="err Email"></label>
+						</div>
+
+
+						<!--======= Password =======-->
+						<div class="input">
+							<input type="password" autocomplete="off" class="text__input"
+								   name="Password" id="Password" placeholder="Password"
+								   @oninput='OnPasswordChanged' value="@Password" />
+							<br>
+							<label for="Password" class="err Password"></label>
+						</div>
+
+						<!--======= PhoneNumber =======-->
+						<div class="input">
+							<input type="text" autocomplete="off" class="text__input"
+								   name="PhoneNumber" id="PhoneNumber" placeholder="Phone Number"
+								   @oninput='OnPhoneNumberChanged' value="@PhoneNumber" />
+							<br>
+							<label for="PhoneNumber" class="err PhoneNumber"></label>
+						</div>
+
+
+						<!--======= Role =======-->
+						<div class="input">
+							<div class="dropdown__wrapper">
+								<div class="showRoles" v-on:click="openDropdown()" @onclick='OpenDropdown'>
+									Select Role : @Role
+								</div>
+								@if (IsDropDownOpen)
+								{
+									<div class="roles_list">
+										<div class="role" @onclick='() => SelectRole("Admin")'>
+											<span>Admin</span>
+										</div>
+										<div class="role" @onclick='() => SelectRole("Agent")'>
+											<span>Agent</span>
+										</div>
+									</div>
+								}
+							</div>
+							<label class="input__error types"></label>
+						</div>
+
+						<!--======= Activate =======-->
+						<div class="input">
+							<div class="act @active" @onclick='activate'>
+								<i class="fa-solid fa-check"></i>
+							</div>
+						</div>
+
+						<!--======= Submit Button =======-->
+						<div class="input">
+							<button class="form__button" @onclick='() => ManageAgent(TypeOperation)'>
+								<span class="form__title">@TypeOperation</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$("#FullName").on("focus", function () {
+				$(".FullName").text("");
+				$(this).removeClass("error__class");
+			});
+
+			$("#FullName").blur(function () {
+				$(this).removeClass("error__class");
+			});
+
+			$("#Email").on("focus", function () {
+				$(".Email").text("");
+				$(this).removeClass("error__class");
+			});
+
+			$("#Email").blur(function () {
+				$(this).removeClass("error__class");
+			});
+
+			$("#Password").on("focus", function () {
+				$(".Password").text("");
+				$(this).removeClass("error__class");
+			});
+
+			$("#Password").blur(function () {
+				$(this).removeClass("error__class");
+			});
+
+			$("#PhoneNumber").on("focus", function () {
+				$(".PhoneNumber").text("");
+				$(this).removeClass("error__class");
+			});
+
+			$("#PhoneNumber").blur(function () {
+				$(this).removeClass("error__class");
+			});
+
+			$(".showRoles").click(function () {
+				$(".showRoles").removeClass("error__class");
+			});
+
+			function activate() {
+				$(".act").toggleClass("back");
+			}
+
+			function fillError(element, message) {
+				$(`#${element}`).addClass("error__class");
+				$(`.${element}`).text(message);
+			}
+
+			function role() {
+				$(".showRoles").addClass("error__class");
+			}
+		</script>
+	}
+
+	@if (NewActivity)
+	{
+		<div class="te">
+			<div class="messageBox">
+				<div class="message__icon">
+					<img src="./Images/check.svg" width="30" height="30">
+				</div>
+				<div class="message__info">
+					<div class="message__title">
+						<h3>@MessageTitle</h3>
+					</div>
+					<div class="message__content">
+						<span>@MessageDescription</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+
+</div>

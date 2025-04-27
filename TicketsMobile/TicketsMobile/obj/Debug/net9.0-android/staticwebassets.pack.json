@@ -1,0 +1,73 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\TicketsMobile.styles.css",
+      "PackagePath": "staticwebassets\\TicketsMobile.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\check.svg",
+      "PackagePath": "staticwebassets\\Images\\check.svg"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\envelope.svg",
+      "PackagePath": "staticwebassets\\Images\\envelope.svg"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\hero.svg",
+      "PackagePath": "staticwebassets\\Images\\hero.svg"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\logo.png",
+      "PackagePath": "staticwebassets\\Images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\plus.svg",
+      "PackagePath": "staticwebassets\\Images\\plus.svg"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\Images\\xmark.svg",
+      "PackagePath": "staticwebassets\\Images\\xmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\Styles.css",
+      "PackagePath": "staticwebassets\\css\\Styles.css"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\moayy\\Desktop\\Projects\\Tickets\\TicketsMobile\\TicketsMobile\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.TicketsMobile.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.TicketsMobile.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.build.TicketsMobile.props",
+      "PackagePath": "build\\TicketsMobile.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.buildMultiTargeting.TicketsMobile.props",
+      "PackagePath": "buildMultiTargeting\\TicketsMobile.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.buildTransitive.TicketsMobile.props",
+      "PackagePath": "buildTransitive\\TicketsMobile.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

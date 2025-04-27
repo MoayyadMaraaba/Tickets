@@ -1,0 +1,220 @@
+﻿@page "/Register"
+@using System.Diagnostics;
+@using TicketsMobile.API;
+@using Newtonsoft.Json.Linq;
+@implements IAsyncDisposable
+
+@inject NavigationManager Navigation;
+
+@code {
+	private string animationClass = "fade-enter";
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			animationClass = "fade-enter";
+		}
+
+		await base.OnAfterRenderAsync(firstRender);
+	}
+
+	public async ValueTask DisposeAsync()
+	{
+		animationClass = "fade-exit";
+		StateHasChanged();
+	}
+
+	private Dictionary<string, object> body = new Dictionary<string, object>
+			{
+				{"FullName", ""},
+				{ "Email", "" },
+				{"phonenumber", ""},
+				{ "password", "" },
+			};
+
+	private string FullName
+	{
+		get => (string)body["FullName"];
+		set => body["FullName"] = value;
+	}
+
+	private string Email
+	{
+		get => (string)body["Email"];
+		set => body["Email"] = value;
+	}
+
+	private string phonenumber
+	{
+		get => (string)body["phonenumber"];
+		set => body["phonenumber"] = value;
+	}
+
+	private string password
+	{
+		get => (string)body["password"];
+		set => body["password"] = value;
+	}
+
+	private Dictionary<string, string> errors = new Dictionary<string, string>
+			{
+				{"FullName", ""},
+				{ "Email", "" },
+				{"phonenumber", ""},
+				{ "password", "" },
+			};
+
+	private int err = 0;
+
+	private async void register()
+	{
+		err = 0;
+		foreach (KeyValuePair<string, object> entry in body)
+		{
+			if (string.IsNullOrEmpty((string)entry.Value))
+			{
+				errors[entry.Key] = $"Please Enter {entry.Key}";
+				err++;
+				StateHasChanged();
+			}
+		}
+
+		StateHasChanged();
+
+		if (err == 0)
+		{
+
+			Fetch fetch = new Fetch();
+
+			var data = await fetch.GetData("api/Authentication/Register", body, null,null, null, RestSharp.Method.Post);
+
+			int StatusCode = (int)data["StatusCode"];
+			Dictionary<string, object> res = (Dictionary<string, object>)data["Data"];
+
+
+			if (StatusCode == 201)
+			{
+				Navigation.NavigateTo("/Login");
+			}
+
+			if (StatusCode == 400)
+			{
+				string error = res["err"].ToString();
+
+				if (error == "Email already exists")
+				{
+					errors["Email"] = error;
+				} else
+				{
+					errors["Email"] = "";
+				}
+
+				if (error == "Number already exists")
+				{
+					errors["phonenumber"] = error;
+				}else
+				{
+					errors["phonenumber"] = "";
+				}
+
+				StateHasChanged();
+			}
+		}
+	}
+
+
+	private void remove(string key)
+	{
+		errors[key] = "";
+	}
+}
+<div class="Register @animationClass">
+	<h1 class="login__title">Welcome</h1>
+
+	<div class="input">
+		<label for="FullName" class="input__title">FullName</label>
+		<br />
+		<input type="text" id="FullName" placeholder="FullName" class="text__input  @(string.IsNullOrEmpty(errors["FullName"]) ? "" : "error__class" )" @bind="FullName" @onfocus="() => remove(errors.Keys.ToArray()[0])" />
+		<br />
+		@if (!string.IsNullOrEmpty(errors["FullName"]))
+		{
+			<label for="FullName" class="input__error FullName">@errors["FullName"]</label>
+		}
+	</div>
+
+	<div class="input">
+		<label for="Email" class="input__title">Email</label>
+		<br />
+		<input type="text" id="Email" placeholder="Email" class="text__input @(string.IsNullOrEmpty(errors["Email"]) ? "" : "error__class" )" @bind="Email" @onfocus="() => remove(errors.Keys.ToArray()[1])" />
+		<br />
+		@if (!string.IsNullOrEmpty(errors["Email"]))
+		{
+			<label for="Email" class="input__error Email">@errors["Email"]</label>
+		}
+	</div>
+
+	<div class="input">
+		<label for="phonenumber" class="input__title">Phone number</label>
+		<br>
+		<input type="text" id="phonenumber" placeholder="Phone Number" class="text__input @(string.IsNullOrEmpty(errors["phonenumber"]) ? "" : "error__class" )" @bind="phonenumber" @onfocus="() => remove(errors.Keys.ToArray()[2])" />
+		<br>
+		@if (!string.IsNullOrEmpty(errors["phonenumber"]))
+		{
+			<label for="phonenumber" class="input__error phonenumber">@errors["phonenumber"]</label>
+		}
+	</div>
+
+	<div class="input">
+		<label for="password" class="input__title">Password</label>
+		<br />
+		<input type="password" id="passord" placeholder="Password" class="text__input @(string.IsNullOrEmpty(errors["password"]) ? "" : "error__class" )" @bind="password" @onfocus="() => remove(errors.Keys.ToArray()[3])" />
+		<br />
+		@if (!string.IsNullOrEmpty(errors["password"]))
+		{
+			<label for="password" class="input__error password">@errors["password"]</label>
+		}
+	</div>
+
+	<div class="input links">
+		<a href="/Login" class="form__link">Have an Account ?</a>
+	</div>
+
+	<button class="submit__button" @onclick="register">Sign up</button>
+</div>
+
+<script>
+	$("#FullName").on("focus", function () {
+		$(this).removeClass("error__class");
+	});
+
+	$("#FullName").blur(function () {
+		$(this).removeClass("error__class");
+	});
+
+	$("#Email").on("focus", function () {
+		$(this).removeClass("error__class");
+	});
+
+	$("#Email").blur(function () {
+		$(this).removeClass("error__class");
+	});
+
+
+	$("#phonenumber").on("focus", function () {
+		$(this).removeClass("error__class");
+	});
+
+	$("#phonenumber").blur(function () {
+		$(this).removeClass("error__class");
+	});
+
+
+	$("#password").on("focus", function () {
+		$(this).removeClass("error__class");
+	});
+
+	$("#password").blur(function () {
+		$(this).removeClass("error__class");
+	});
+</script>

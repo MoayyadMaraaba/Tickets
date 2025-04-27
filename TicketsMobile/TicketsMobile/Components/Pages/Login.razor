@@ -1,0 +1,146 @@
+﻿@page "/Login"
+
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@using TicketsMobile.API;
+@using System.Diagnostics;
+
+@inject Blazored.LocalStorage.ILocalStorageService localStorage;
+@inject NavigationManager Navigation;
+@inject IJSRuntime JSRuntime
+
+@code {
+
+	private string email = "";
+	private string password = "";
+
+
+	private Dictionary<string, string> err = new Dictionary<string, string>
+			{
+				{ "Email", "" },
+				{ "password", "" },
+			};
+
+	private int errors = 0;
+
+	private async void login()
+	{
+		errors = 0;
+
+		if (string.IsNullOrEmpty(email))
+		{
+			err["Email"] = "Please Enter an Email";
+			errors++;
+		}
+
+		if (string.IsNullOrEmpty(password))
+		{
+			err["password"] = "Please Enter a Password";
+			errors++;
+		}
+
+
+		StateHasChanged();
+
+
+
+
+		if (errors == 0)
+		{
+			Fetch fetch = new Fetch();
+
+			var body = new Dictionary<string, object>
+			{
+				{ "Email", email },
+				{ "Password", password }
+			};
+
+			var data = await fetch.GetData("api/Authentication/Login", body,null,null, null, RestSharp.Method.Post);
+
+			int StatusCode = (int)data["StatusCode"];
+			Dictionary<string, object> res = (Dictionary<string, object>)data["Data"];
+
+			if (StatusCode == 200)
+			{
+				await localStorage.SetItemAsync("token", res["token"].ToString());
+				await localStorage.SetItemAsync("Role", res["role"].ToString());
+
+				Navigation.NavigateTo("/Dashboard");
+			}
+
+			if (StatusCode == 400)
+			{
+				string error = res["err"].ToString();
+
+				if (error == "No Email Found")
+				{
+					err["Email"] = error;
+				}
+				else
+				{
+					err["Email"] = "";
+				}
+
+				if (error == "Password is Wrong")
+				{
+					err["password"] = error;
+				}
+				else
+				{
+					err["password"] = "";
+				}
+
+				StateHasChanged();
+			}
+		}
+	}
+
+	private void remove(string key)
+	{
+		err[key] = "";
+	}
+}
+
+<div class="page">
+	<div class="login">
+		<h1 class="login__title">Welcome Back</h1>
+		<div class="input">
+			<label for="Email" class="input__title">Email</label>
+			<br />
+			<input type="text" id="Email" placeholder="Email" class="text__input @(string.IsNullOrEmpty(err["Email"]) ? "" : "error__class" )" @bind="email" @onfocus="() => remove(err.Keys.ToArray()[0])" />
+			<br />
+			<label for="Email" class="input__error Email">
+				@err["Email"]
+			</label>
+		</div>
+
+		<div class="input">
+			<label for="Password" class="input__title">Password</label>
+			<br />
+			<input type="password" id="Password" placeholder="Password" class="text__input @(string.IsNullOrEmpty(err["password"]) ? "" : "error__class" )" @bind="password" @onfocus="() => remove(err.Keys.ToArray()[1])" />
+			<br />
+			<label for="Password" class="input__error Password">@err["password"]</label>
+		</div>
+
+		<button class="submit__button" @onclick="login">Login</button>
+	</div>
+</div>
+
+
+<script>
+	$("#Email").on("focus", function () {
+		$(this).removeClass("error__class");
+	});
+
+	$("#Email").blur(function () {
+		$(this).removeClass("error__class");
+	});
+
+	$("#Password").on("focus", function () {
+		$(this).removeClass("error__class");
+	});
+
+	$("#Password").blur(function () {
+		$(this).removeClass("error__class");
+	});
+</script>
